@@ -13,8 +13,8 @@ permissions:
 
 # Make prefixes for this repo
 env:
-  FILTER_PREFIX: Make-
-  SIGNAL_PREFIX: MAKE
+  FILTER_PREFIX: Skoda-
+  SIGNAL_PREFIX: SKODA
 
 concurrency:
   group: "data-update"

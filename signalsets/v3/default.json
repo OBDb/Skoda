@@ -6,14 +6,16 @@
   "commands": [
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_TID_RL", "path": "Tires", "fmt": {           "len": 32, "max": 100,                                           "unit": "scalar"  }, "name": "Rear left tire sensor id"},
-    {"id": "SKODA_TP_FR",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front right tire pressure",         "suggestedMetric": "frontRightTirePressure"},
-    {"id": "SKODA_TP_RL",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear left tire current pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "SKODA_TP_1",   "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 1 current pressure",           "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "SKODA_TT_RL",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                  "unit": "celsius" }, "name": "Rear left tire temperature",        "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "SKODA_TT_1",   "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 1 temperature",                "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "SKODA_TPS_RL", "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Rear left tire specified pressure"},
-    {"id": "SKODA_TPW_RL", "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Rear left tire warning pressure"},
+    {"id": "SKODA_TID_RL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Rear left tire sensor id"},
+    {"id": "SKODA_TP_FR",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front right tire pressure",            "suggestedMetric": "frontRightTirePressure"},
+    {"id": "SKODA_TP_RL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear left tire current pressure",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "SKODA_TP_1",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 1 current pressure",              "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "SKODA_TT_FR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Front right tire temperature",         "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "SKODA_TT_RL",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                  "unit": "celsius" }, "name": "Rear left tire temperature",           "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "SKODA_TT_1",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 1 temperature",                   "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "SKODA_TP_SET_FR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Front right tire pressure, set point"},
+    {"id": "SKODA_TPS_RL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Rear left tire specified pressure"},
+    {"id": "SKODA_TPW_RL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Rear left tire warning pressure"},
     {"id": "SKODA_TPOS_RL", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -24,14 +26,16 @@
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_TID_FR",   "path": "Tires", "fmt": {           "len": 32, "max": 100,                                           "unit": "scalar"  }, "name": "Front right tire sensor id"},
-    {"id": "SKODA_TP_FL",    "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front left tire pressure",            "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "SKODA_TP_FR_V2", "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front right tire current pressure",   "suggestedMetric": "frontRightTirePressure"},
-    {"id": "SKODA_TP_2",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Tire #2 pressure"},
-    {"id": "SKODA_TT_FR",    "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                  "unit": "celsius" }, "name": "Front right tire temperature",        "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "SKODA_TT_2",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 2 temperature",                  "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "SKODA_TPS_FR",   "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Front right tire specified pressure"},
-    {"id": "SKODA_TPW_FR",   "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Front right tire warning pressure"},
+    {"id": "SKODA_TID_FR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Front right tire sensor id"},
+    {"id": "SKODA_TP_FL",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front left tire pressure",            "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "SKODA_TP_FR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front right tire current pressure",   "suggestedMetric": "frontRightTirePressure"},
+    {"id": "SKODA_TT_FL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "SKODA_TP_2",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Tire #2 pressure"},
+    {"id": "SKODA_TT_FR_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                  "unit": "celsius" }, "name": "Front right tire temperature",        "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "SKODA_TT_2",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 2 temperature",                  "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "SKODA_TP_SET_FL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Front left tire pressure, set point"},
+    {"id": "SKODA_TPS_FR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Front right tire specified pressure"},
+    {"id": "SKODA_TPW_FR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Front right tire warning pressure"},
     {"id": "SKODA_TPOS_FR", "path": "Tires", "name": "Tire 2 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -42,14 +46,16 @@
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A2"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_TID_RR",   "path": "Tires", "fmt": {           "len": 32, "max": 100,                                           "unit": "scalar"  }, "name": "Rear right tire sensor id"},
-    {"id": "SKODA_TP_RL_V2", "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear left tire pressure",            "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "SKODA_TP_RR",    "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear right tire current pressure",   "suggestedMetric": "rearRightTirePressure"},
-    {"id": "SKODA_TP_3",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 3 current pressure",            "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "SKODA_TT_RR",    "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                  "unit": "celsius" }, "name": "Rear right tire temperature",        "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "SKODA_TT_3",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 3 temperature",                 "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "SKODA_TPS_RR",   "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Rear right tire specified pressure"},
-    {"id": "SKODA_TPW_RR",   "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Rear right tire warning pressure"},
+    {"id": "SKODA_TID_RR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Rear right tire sensor id"},
+    {"id": "SKODA_TP_RL_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear left tire pressure",            "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "SKODA_TP_RR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Rear right tire current pressure",   "suggestedMetric": "rearRightTirePressure"},
+    {"id": "SKODA_TP_3",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 3 current pressure",            "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "SKODA_TT_RL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Rear left tire temperature",         "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "SKODA_TT_RR",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                  "unit": "celsius" }, "name": "Rear right tire temperature",        "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "SKODA_TT_3",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 3 temperature",                 "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "SKODA_TP_SET_RL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Rear left tire pressure, set point"},
+    {"id": "SKODA_TPS_RR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Rear right tire specified pressure"},
+    {"id": "SKODA_TPW_RR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Rear right tire warning pressure"},
     {"id": "SKODA_TPOS_RR", "path": "Tires", "name": "Tire 3 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -60,14 +66,16 @@
   ]},
 { "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_TID_FL",   "path": "Tires", "fmt": {           "len": 32, "max": 100,                                           "unit": "scalar"  }, "name": "Front left tire sensor id"},
-    {"id": "SKODA_TP_RR_V2", "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear right tire pressure",           "suggestedMetric": "rearRightTirePressure"},
-    {"id": "SKODA_TP_FL_V2", "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front left tire current pressure",   "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "SKODA_TP_4",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 4 current pressure",            "suggestedMetric": "rearRightTirePressure"},
-    {"id": "SKODA_TT_FL",    "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                  "unit": "celsius" }, "name": "Front left tire temperature",        "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "SKODA_TT_4",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 4 temperature",                 "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "SKODA_TPS_FL",   "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Front left tire specified pressure"},
-    {"id": "SKODA_TPW_FL",   "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                              "unit": "bars"    }, "name": "Front left tire warning pressure"},
+    {"id": "SKODA_TID_FL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Front left tire sensor id"},
+    {"id": "SKODA_TP_RR_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear right tire pressure",            "suggestedMetric": "rearRightTirePressure"},
+    {"id": "SKODA_TP_FL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Front left tire current pressure",    "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "SKODA_TP_4",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,   "unit": "bars"    }, "name": "Tire 4 current pressure",             "suggestedMetric": "rearRightTirePressure"},
+    {"id": "SKODA_TT_RR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127,  "unit": "celsius" }, "name": "Rear right tire temperature",         "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "SKODA_TT_FL_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                  "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "SKODA_TT_4",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100,  "unit": "celsius" }, "name": "Tire 4 temperature",                  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "SKODA_TP_SET_RR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                              "unit": "bars"    }, "name": "Rear right tire pressure, set point"},
+    {"id": "SKODA_TPS_FL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Front left tire specified pressure"},
+    {"id": "SKODA_TPW_FL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                              "unit": "bars"    }, "name": "Front left tire warning pressure"},
     {"id": "SKODA_TPOS_FL", "path": "Tires", "name": "Tire 4 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -76,9 +84,9 @@
         }}
     }
   ]},
-{ "hdr": "70E", "rax": "778", "fcm1": true, "dbg": true, "cmd": {"22": "1945"}, "freq": 1,
+{ "hdr": "70E", "rax": "778", "fcm1": true, "dbg": true, "cmd": {"22": "1945"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_HTR_NOZZLE", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Washer nozzle heater active"}
+    {"id": "SKODA_HTR_NOZZLE", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Washer nozzle heater active"}
   ]},
 { "hdr": "70F", "rax": "779", "fcm1": true, "dbg": true, "cmd": {"22": "08A7"}, "freq": 1,
   "signals": [
@@ -132,32 +140,32 @@
   "signals": [
     {"id": "SKODA_PQ35_HAL_DUTY", "path": "Drivetrain", "fmt": { "len": 8, "max": 100, "mul": 100.39, "div": 255, "unit": "percent" }, "name": "All-wheel drive duty cycle"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "15D1"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "15D1"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HV_EM_PWR_LIMITATION",           "path": "Engine",  "fmt": {"bix": 8,  "len": 16, "max": 3276750, "mul": 50,              "unit": "watts"         }, "name": "Electric motor power limitation"},
-    {"id": "SKODA_HV_EM_NV_PWR_LIMITATION",        "path": "Engine",  "fmt": {"bix": 24, "len": 8,  "max": 12750,   "mul": 50,              "unit": "watts"         }, "name": "Electric motor non-vehicle power limitation"},
-    {"id": "SKODA_NV_ENERGY_REQUIREMENT",          "path": "Battery", "fmt": {"bix": 32, "len": 8,  "max": 12.75,   "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Non-vehicle energy requirement"},
-    {"id": "SKODA_HV_EM_HVBAT_ENERGY_INFORMATION", "path": "Battery", "fmt": {"bix": 40, "len": 16, "max": 3276.75, "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Electric motor battery energy"}
+    {"id": "SKODA_EM_PWR_LIM",            "path": "Engine",  "fmt": {"bix": 8,  "len": 16, "max": 3276750, "mul": 50,              "unit": "watts"         }, "name": "Electric motor power limitation"},
+    {"id": "SKODA_EM_NV_PWR_LIM",         "path": "Engine",  "fmt": {"bix": 24, "len": 8,  "max": 12750,   "mul": 50,              "unit": "watts"         }, "name": "Electric motor non-vehicle power limitation"},
+    {"id": "SKODA_NV_ENERGY_REQUIREMENT", "path": "Battery", "fmt": {"bix": 32, "len": 8,  "max": 12.75,   "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Non-vehicle energy requirement"},
+    {"id": "SKODA_EM_HVBAT_E_INFO",       "path": "Battery", "fmt": {"bix": 40, "len": 16, "max": 3276.75, "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Electric motor battery energy"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A00"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A00"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_GEN_TRG_V", "path": "Battery", "fmt": { "len": 8, "max": 36.1, "min": 10.6, "div": 10, "add": 10.6, "unit": "volts" }, "name": "Generator target voltage"},
-    {"id": "SKODA_SSB_VT",        "path": "Battery", "fmt": { "len": 8, "max": 36.1,              "div": 10, "add": 10.6, "unit": "volts" }, "name": "Start/stop battery target voltage"}
+    {"id": "SKODA_SSB_VT",        "path": "Battery", "fmt": { "len": 8, "max": 36.1,              "div": 10, "add": 10.6, "unit": "volts" }, "name": "12V battery target voltage"},
+    {"id": "SKODA_MQB_GEN_TRG_V", "path": "Battery", "fmt": { "len": 8, "max": 36.1, "min": 10.6, "div": 10, "add": 10.6, "unit": "volts" }, "name": "Generator target voltage"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A06"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A06"}, "freq": 5,
   "signals": [
     {"id": "SKODA_12V_BAT_CAP", "path": "Battery", "fmt": {"bix": 16, "len": 8, "max": 255, "unit": "ampereHours" }, "name": "12V battery capacity"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A07"}, "freq": 1,
   "signals": [
     {"id": "SKODA_SSB_V",      "path": "Battery", "fmt": { "len": 16, "max": 69.54,  "min": 4, "div": 100,  "add": 4, "unit": "volts" }, "name": "Start/stop battery voltage"},
-    {"id": "SKODA_MQB_BAT_V",  "path": "Battery", "fmt": { "len": 16, "max": 69.535, "min": 4, "div": 1000, "add": 4, "unit": "volts" }, "name": "Battery voltage"},
-    {"id": "SKODA_BAT_V_2A07", "path": "Battery", "fmt": { "len": 16, "max": 69.535, "min": 4, "div": 1000, "add": 4, "unit": "volts" }, "name": "Battery voltage",            "suggestedMetric": "starterBatteryVoltage"}
+    {"id": "SKODA_BAT_V_2A07", "path": "Battery", "fmt": { "len": 16, "max": 69.535, "min": 4, "div": 1000, "add": 4, "unit": "volts" }, "name": "Battery voltage",            "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "SKODA_MQB_BAT_V",  "path": "Battery", "fmt": { "len": 16, "max": 69.535, "min": 4, "div": 1000, "add": 4, "unit": "volts" }, "name": "Battery voltage"}
   ]},
-{ "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A09"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A09"}, "freq": 5,
   "signals": [
+    {"id": "SKODA_SSB_C",     "path": "Battery", "fmt": { "len": 32, "max": 100,                                                "div": 1000,                "sign": true, "unit": "amps" }, "name": "12V battery current"},
     {"id": "SKODA_MQB_BAT_I", "path": "Battery", "fmt": { "len": 32, "max": 2147483.6469999999, "min": -2147483.648,            "div": 1000,                "sign": true, "unit": "amps" }, "name": "Battery current"},
-    {"id": "SKODA_SSB_C",     "path": "Battery", "fmt": { "len": 32, "max": 100,                                                "div": 1000,                "sign": true, "unit": "amps" }, "name": "Start/stop battery current"},
     {"id": "SKODA_BAT_I",     "path": "Battery", "fmt": { "len": 24, "max": 13777.215,          "min": -3000,        "mul": 10, "div": 10000, "add": -3000,               "unit": "amps" }, "name": "Battery current"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 1,
@@ -189,16 +197,16 @@
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A10"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_SSB_V_REST",     "path": "Battery", "fmt": { "len": 8, "max": 63,   "min": 9, "mul": 54, "div": 255, "add": 9, "unit": "volts" }, "name": "Start/stop battery voltage (at rest)"},
-    {"id": "SKODA_MQB_BAT_V_REST", "path": "Battery", "fmt": { "len": 8, "max": 34.5, "min": 9,            "div": 10,  "add": 9, "unit": "volts" }, "name": "Battery voltage at rest"}
+    {"id": "SKODA_SSB_V_REST",    "path": "Battery", "fmt": { "len": 8, "max": 63,   "min": 9, "mul": 54, "div": 255, "add": 9, "unit": "volts" }, "name": "Start/stop battery voltage (at rest)"},
+    {"id": "SKODA_BAT_V_AT_REST", "path": "Battery", "fmt": { "len": 8, "max": 34.5, "min": 9,            "div": 10,  "add": 9, "unit": "volts" }, "name": "Battery voltage at rest"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A1C"}, "freq": 1,
   "signals": [
     {"id": "SKODA_GEN_CURRENT", "path": "Engine", "fmt": { "len": 16, "max": 6562.5, "div": 10, "add": 9, "unit": "amps" }, "name": "Generator current"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A25"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A25"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_BAT_INTERNAL_RES_RAW", "path": "Battery", "fmt": { "len": 8, "max": 51, "div": 5, "unit": "unknown" }, "name": "Battery internal resistance, raw"}
+    {"id": "SKODA_BAT_R_RAW", "path": "Battery", "fmt": { "len": 8, "max": 51, "div": 5, "unit": "unknown" }, "name": "Battery internal resistance, raw"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A53"}, "freq": 1,
   "signals": [
@@ -206,11 +214,11 @@
     {"id": "SKODA_DCDC_I",     "path": "Battery", "fmt": {"bix": 8,  "len": 16, "max": 65024, "min": -511,            "add": -511, "unit": "amps"  }, "name": "DC-DC converter, current"},
     {"id": "SKODA_DCDC_I_RSV", "path": "Battery", "fmt": {"bix": 24, "len": 16, "max": 65024, "min": -511,            "add": -511, "unit": "amps"  }, "name": "DC-DC converter, reserved current"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A61"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A61"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_BAT_TOT_CHG",     "path": "Battery", "fmt": {           "len": 32, "max": 429496729.5, "div": 10, "unit": "ampereHours" }, "name": "Battery total charge"},
+    {"id": "SKODA_BAT_TOT_CHG",         "path": "Battery", "fmt": {           "len": 32, "max": 429496729.5, "div": 10, "unit": "ampereHours" }, "name": "Battery total charge"},
     {"id": "SKODA_SSB_TOTAL_CHARGE",    "path": "Battery", "fmt": {           "len": 32, "max": 100,         "div": 10, "unit": "ampereHours" }, "name": "Start/stop battery total charge"},
-    {"id": "SKODA_MQB_BAT_TOT_DIS",     "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 429496729.5, "div": 10, "unit": "ampereHours" }, "name": "Battery total discharge"},
+    {"id": "SKODA_BAT_TOT_DIS",         "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 429496729.5, "div": 10, "unit": "ampereHours" }, "name": "Battery total discharge"},
     {"id": "SKODA_SSB_TOTAL_DISCHARGE", "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 100,         "div": 10, "unit": "ampereHours" }, "name": "Start/stop battery total discharge"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB2"}, "freq": 86400,
@@ -243,7 +251,8 @@
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB8"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_HVBAT_KWH", "path": "Battery", "fmt": { "len": 32, "max": 3276, "div": 1310770, "unit": "kilowattHours" }, "name": "HV battery energy", "description": "Energy stored in the high voltage battery"}
+    {"id": "SKODA_HVBAT_KWH",       "path": "Battery", "fmt": {           "len": 32, "max": 3276,               "div": 1310770, "unit": "kilowattHours" }, "name": "HV battery energy",         "description": "Energy stored in the high voltage battery"},
+    {"id": "SKODA_HVBAT_E_CONTENT", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1638.37, "mul": 25, "div": 1000,    "unit": "kilowattHours" }, "name": "HV battery energy content", "description": "Energy stored in the high voltage battery"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AF7"}, "freq": 1,
   "signals": [
@@ -266,107 +275,111 @@
   "signals": [
     {"id": "SKODA_STEER_WHL_T", "path": "Tires", "fmt": { "len": 8, "max": 255, "unit": "celsius" }, "name": "Steering wheel temperature"}
   ]},
-{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1805"}, "freq": 0.25,
+{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1805"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_STEER_WHL_TQ_SENS_1", "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"}
+    {"id": "SKODA_STEER_TQ_1",          "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"},
+    {"id": "SKODA_STEER_WHL_TQ_SENS_1", "path": "Tires", "fmt": { "len": 16, "max": 144,      "min": -143,      "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"}
   ]},
-{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1806"}, "freq": 0.25,
+{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1806"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_STEER_WHL_TQ_SENS_2", "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"}
+    {"id": "SKODA_STEER_TQ_2",          "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"},
+    {"id": "SKODA_STEER_WHL_TQ_SENS_2", "path": "Tires", "fmt": { "len": 16, "max": 144,      "min": -143,      "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"}
   ]},
-{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1812"}, "freq": 1,
+{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1812"}, "freq": 5,
   "signals": [
+    {"id": "SKODA_STEER_ANGLE_EPS",   "path": "Tires", "fmt": { "len": 16, "max": 4095.875, "min": -4096,    "div": 8,              "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"},
     {"id": "SKODA_MQB_SWA",           "path": "Tires", "fmt": { "len": 16, "max": 4095.935, "min": -4095.94, "div": 8, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"},
-    {"id": "SKODA_STEER_WHEEL_ANGLE", "path": "Tires", "fmt": { "len": 16, "max": 4095.875, "min": -4096,    "div": 8,              "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+    {"id": "SKODA_STEER_WHEEL_ANGLE", "path": "Tires", "fmt": { "len": 16, "max": 780,      "min": -780,     "div": 8, "add": -750,               "unit": "degrees" }, "name": "Steering wheel angle"}
   ]},
-{ "hdr": "713", "dbg": true, "cmd": {"22": "1800"}, "freq": 0.25,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1800"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_FL_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front left wheel speed"},
-    {"id": "SKODA_FL_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
+    {"id": "SKODA_FL_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "SKODA_FL_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front left wheel speed"}
   ]},
-{ "hdr": "713", "dbg": true, "cmd": {"22": "1801"}, "freq": 0.25,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1801"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_FR_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front right wheel speed"},
-    {"id": "SKODA_FR_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
+    {"id": "SKODA_FR_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "SKODA_FR_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Front right wheel speed"}
   ]},
-{ "hdr": "713", "dbg": true, "cmd": {"22": "1802"}, "freq": 0.25,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1802"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_RL_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear left wheel speed"},
-    {"id": "SKODA_RL_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "SKODA_RL_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "SKODA_RL_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear left wheel speed"}
   ]},
-{ "hdr": "713", "dbg": true, "cmd": {"22": "1803"}, "freq": 0.25,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1803"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_RR_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear right wheel speed"},
-    {"id": "SKODA_RR_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+    {"id": "SKODA_RR_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "SKODA_RR_VSS",    "path": "Movement", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers"        }, "name": "Rear right wheel speed"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1804"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1804"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_SWA_ALT", "path": "Tires", "fmt": {"bix": 80, "len": 16, "max": 14335.5625, "min": -14336, "mul": 0.4375, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+    {"id": "SKODA_SWA_ALT",     "path": "Tires", "fmt": {"bix": 80, "len": 16, "max": 14335.5625, "min": -14336, "mul": 0.4375, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"},
+    {"id": "SKODA_MQB_SWA_ALT", "path": "Tires", "fmt": {"bix": 80, "len": 16, "max": 14335.562,  "min": -14336, "mul": 0.4375, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1808"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1808"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_HDC_ACT", "path": "Control", "fmt": {"bix": 6, "len": 1, "max": 1,   "unit": "offon"   }, "name": "Hill descent control active"},
-    {"id": "SKODA_MQB_HDC_INC", "path": "Control", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "percent" }, "name": "Hill descent control incline angle"}
+    {"id": "SKODA_HDC_ACT", "path": "Control", "fmt": {"bix": 6, "len": 1, "max": 1,   "unit": "offon"   }, "name": "Hill descent control active"},
+    {"id": "SKODA_HDC_INC", "path": "Control", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "percent" }, "name": "Hill descent control incline angle"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "180A"}, "freq": 1,
   "signals": [
     {"id": "SKODA_MQB_HAL_CLUTCH_OPEN",  "path": "Transmission", "fmt": {"bix": 2,  "len": 1, "max": 1,           "unit": "offon" }, "name": "All-wheel drive clutch fully open"},
     {"id": "SKODA_MQB_HAL_CLUTCH_BLOCK", "path": "Transmission", "fmt": {"bix": 15, "len": 1, "max": 1, "mul": 8, "unit": "offon" }, "name": "All-wheel drive clutch blockage degree"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "180C"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "180C"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_ELEC_DIFF_ACT",      "path": "Engine",  "fmt": {"bix": 1,  "len": 1,  "max": 1,                                                   "unit": "offon"   }, "name": "Electronic differential lock active"},
-    {"id": "SKODA_MQB_ELEC_DIFF_FL_BRK_T", "path": "Engine",  "fmt": {"bix": 8,  "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock front left brake temperature"},
-    {"id": "SKODA_EDL_FR_L_BRAKE_T",       "path": "Control", "fmt": {"bix": 8,  "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front left brake temperature"},
-    {"id": "SKODA_MQB_ELEC_DIFF_FR_BRK_T", "path": "Engine",  "fmt": {"bix": 24, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock front right brake temperature"},
-    {"id": "SKODA_EDL_FR_R_BRAKE_T",       "path": "Control", "fmt": {"bix": 24, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front right brake temperature"},
-    {"id": "SKODA_MQB_ELEC_DIFF_RL_BRK_T", "path": "Engine",  "fmt": {"bix": 40, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock rear left brake temperature"},
-    {"id": "SKODA_EDL_RR_L_BRAKE_T",       "path": "Control", "fmt": {"bix": 40, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear left brake temperature"},
-    {"id": "SKODA_MQB_ELEC_DIFF_RR_BRK_T", "path": "Engine",  "fmt": {"bix": 56, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock rear right brake temperature"},
-    {"id": "SKODA_EDL_RR_R_BRAKE_T",       "path": "Control", "fmt": {"bix": 56, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear right brake temperature"}
+    {"id": "SKODA_ELEC_DIFF_ACT",      "path": "Engine",  "fmt": {"bix": 1,  "len": 1,  "max": 1,                                                   "unit": "offon"   }, "name": "Electronic differential lock active"},
+    {"id": "SKODA_ELEC_DIFF_FL_BRK_T", "path": "Engine",  "fmt": {"bix": 8,  "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock front left brake temperature"},
+    {"id": "SKODA_EDL_FR_L_BRAKE_T",   "path": "Control", "fmt": {"bix": 8,  "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front left brake temperature"},
+    {"id": "SKODA_ELEC_DIFF_FR_BRK_T", "path": "Engine",  "fmt": {"bix": 24, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock front right brake temperature"},
+    {"id": "SKODA_EDL_FR_R_BRAKE_T",   "path": "Control", "fmt": {"bix": 24, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: front right brake temperature"},
+    {"id": "SKODA_ELEC_DIFF_RL_BRK_T", "path": "Engine",  "fmt": {"bix": 40, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock rear left brake temperature"},
+    {"id": "SKODA_EDL_RR_L_BRAKE_T",   "path": "Control", "fmt": {"bix": 40, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear left brake temperature"},
+    {"id": "SKODA_ELEC_DIFF_RR_BRK_T", "path": "Engine",  "fmt": {"bix": 56, "len": 16, "max": 300, "min": -20,             "div": 2, "sign": true, "unit": "celsius" }, "name": "Electronic differential lock rear right brake temperature"},
+    {"id": "SKODA_EDL_RR_R_BRAKE_T",   "path": "Control", "fmt": {"bix": 56, "len": 16, "max": 300, "min": -20, "mul": 0.5,           "sign": true, "unit": "celsius" }, "name": "Electronic differential lock: rear right brake temperature"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "180E"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "180E"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_BRK_DRY_ACT",      "path": "Brakes", "fmt": {"bix": 1, "len": 1,  "max": 1,      "unit": "offon"      }, "name": "Brake disk drying active"},
-    {"id": "SKODA_MQB_BRK_DRY_ODO_LAST", "path": "Brakes", "fmt": {"bix": 8, "len": 24, "max": 200000, "unit": "kilometers" }, "name": "Brake disk drying last activation distance"}
+    {"id": "SKODA_BRK_DRY_ACT",      "path": "Brakes", "fmt": {"bix": 1, "len": 1,  "max": 1,      "unit": "offon"      }, "name": "Brake disk drying active"},
+    {"id": "SKODA_BRK_DRY_ODO_LAST", "path": "Brakes", "fmt": {"bix": 8, "len": 24, "max": 200000, "unit": "kilometers" }, "name": "Brake disk drying last activation distance"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1810"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1810"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_HYD_BRK_BST_ACT", "path": "Engine", "fmt": {"bix": 6, "len": 1, "max": 1, "unit": "offon" }, "name": "Hydraulic brake booster active"}
+    {"id": "SKODA_HYD_BRK_BST_ACT", "path": "Engine", "fmt": {"bix": 6, "len": 1, "max": 1, "unit": "offon" }, "name": "Hydraulic brake booster active"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1816"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1816"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_BRK_PRESS", "path": "Brakes", "fmt": {"bix": 8,  "len": 16, "max": 327.67, "div": 100, "sign": true, "unit": "bars"    }, "name": "Brake pressure"},
-    {"id": "SKODA_MQB_AIR_VAC",   "path": "Engine", "fmt": {"bix": 56, "len": 16, "max": 32767,              "sign": true, "unit": "unknown" }, "name": "Air intake vacuum"}
+    {"id": "SKODA_BRK_PRESS", "path": "Brakes", "fmt": {"bix": 8,  "len": 16, "max": 327.67, "div": 100, "sign": true, "unit": "bars"    }, "name": "Brake pressure"},
+    {"id": "SKODA_AIR_VAC",   "path": "Engine", "fmt": {"bix": 56, "len": 16, "max": 32767,              "sign": true, "unit": "unknown" }, "name": "Air intake vacuum"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1821"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1821"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_TPMS_AVAIL",        "path": "Tires", "fmt": {"bix": 7,   "len": 1,  "max": 1,      "unit": "offon"      }, "name": "Tire pressure monitoring available"},
-    {"id": "SKODA_TPMS_AVAIL",            "path": "Tires", "fmt": {"bix": 7,   "len": 1,  "max": 1,      "unit": "noyes"      }, "name": "TPMS available?"},
-    {"id": "SKODA_MQB_TPMS_ODO_ADAPT_1",  "path": "Tires", "fmt": {"bix": 8,   "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at last adaptation"},
-    {"id": "SKODA_MQB_TPMS_ODO_ADAPT_2",  "path": "Tires", "fmt": {"bix": 40,  "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading two adaptations ago"},
-    {"id": "SKODA_MQB_TPMS_ODO_ADAPT_3",  "path": "Tires", "fmt": {"bix": 72,  "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading three adaptations ago"},
-    {"id": "SKODA_MQB_TPMS_ODO_ADAPT_4",  "path": "Tires", "fmt": {"bix": 104, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading four adaptations ago"},
-    {"id": "SKODA_MQB_TPMS_ODO_WARN_1",   "path": "Tires", "fmt": {"bix": 136, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at last warning"},
-    {"id": "SKODA_MQB_TPMS_ODO_WARN_2",   "path": "Tires", "fmt": {"bix": 168, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at second to last warning"},
-    {"id": "SKODA_MQB_TPMS_ODO_WARN_3",   "path": "Tires", "fmt": {"bix": 200, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at third to last warning"},
-    {"id": "SKODA_MQB_TPMS_ODO_WARN_4",   "path": "Tires", "fmt": {"bix": 232, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at fourth to last warning"},
-    {"id": "SKODA_MQB_TPMS_FL_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 264, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front left tire leakage rate"},
-    {"id": "SKODA_MQB_TPMS_FR_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 272, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front right tire leakage rate"},
-    {"id": "SKODA_MQB_TPMS_RL_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 280, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear left tire leakage rate"},
-    {"id": "SKODA_MQB_TPMS_RR_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 288, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear right tire leakage rate"},
-    {"id": "SKODA_MQB_TPMS_FL_FLAT",      "path": "Tires", "fmt": {"bix": 296, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front left flat tire indicator"},
-    {"id": "SKODA_MQB_TPMS_FR_FLAT",      "path": "Tires", "fmt": {"bix": 304, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front right flat tire indicator"},
-    {"id": "SKODA_MQB_TPMS_RL_FLAT",      "path": "Tires", "fmt": {"bix": 312, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear left flat tire indicator"},
-    {"id": "SKODA_MQB_TPMS_RR_FLAT",      "path": "Tires", "fmt": {"bix": 320, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear right flat tire indicator"}
+    {"id": "SKODA_TPMS_AVAIL",        "path": "Tires", "fmt": {"bix": 7,   "len": 1,  "max": 1,      "unit": "offon"      }, "name": "Tire pressure monitoring available"},
+    {"id": "SKODA_TPMS",              "path": "Tires", "fmt": {"bix": 7,   "len": 1,  "max": 1,      "unit": "noyes"      }, "name": "Tire pressure monitoring system available"},
+    {"id": "SKODA_TPMS_ODO_ADAPT_1",  "path": "Tires", "fmt": {"bix": 8,   "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at last adaptation"},
+    {"id": "SKODA_TPMS_ODO_ADAPT_2",  "path": "Tires", "fmt": {"bix": 40,  "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading two adaptations ago"},
+    {"id": "SKODA_TPMS_ODO_ADAPT_3",  "path": "Tires", "fmt": {"bix": 72,  "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading three adaptations ago"},
+    {"id": "SKODA_TPMS_ODO_ADAPT_4",  "path": "Tires", "fmt": {"bix": 104, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading four adaptations ago"},
+    {"id": "SKODA_TPMS_ODO_WARN_1",   "path": "Tires", "fmt": {"bix": 136, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at last warning"},
+    {"id": "SKODA_TPMS_ODO_WARN_2",   "path": "Tires", "fmt": {"bix": 168, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at second to last warning"},
+    {"id": "SKODA_TPMS_ODO_WARN_3",   "path": "Tires", "fmt": {"bix": 200, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at third to last warning"},
+    {"id": "SKODA_TPMS_ODO_WARN_4",   "path": "Tires", "fmt": {"bix": 232, "len": 32, "max": 200000, "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at fourth to last warning"},
+    {"id": "SKODA_TPMS_FL_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 264, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front left tire leakage rate"},
+    {"id": "SKODA_TPMS_FR_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 272, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front right tire leakage rate"},
+    {"id": "SKODA_TPMS_RL_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 280, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear left tire leakage rate"},
+    {"id": "SKODA_TPMS_RR_TIRE_LEAK", "path": "Tires", "fmt": {"bix": 288, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear right tire leakage rate"},
+    {"id": "SKODA_TPMS_FL_FLAT",      "path": "Tires", "fmt": {"bix": 296, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front left flat tire indicator"},
+    {"id": "SKODA_TPMS_FR_FLAT",      "path": "Tires", "fmt": {"bix": 304, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring front right flat tire indicator"},
+    {"id": "SKODA_TPMS_RL_FLAT",      "path": "Tires", "fmt": {"bix": 312, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear left flat tire indicator"},
+    {"id": "SKODA_TPMS_RR_FLAT",      "path": "Tires", "fmt": {"bix": 320, "len": 8,  "max": 255,    "unit": "scalar"     }, "name": "Tire pressure monitoring rear right flat tire indicator"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "18B6"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "18B6"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_CSS_ACT",      "path": "Control", "fmt": {"bix": 6,  "len": 1,  "max": 1,              "unit": "offon"        }, "name": "Directional stability control active"},
-    {"id": "SKODA_MQB_CSS_ODO_LAST", "path": "Control", "fmt": {"bix": 8,  "len": 24, "max": 1,              "unit": "kilometers"   }, "name": "Directional stability control last activation distance"},
-    {"id": "SKODA_MQB_CSS_STR_TRQ",  "path": "Control", "fmt": {"bix": 32, "len": 16, "max": 1, "div": 1000, "unit": "newtonMeters" }, "name": "Directional stability control steering torque"}
+    {"id": "SKODA_CSS_ACT",      "path": "Control", "fmt": {"bix": 6,  "len": 1,  "max": 1,              "unit": "offon"        }, "name": "Directional stability control active"},
+    {"id": "SKODA_CSS_ODO_LAST", "path": "Control", "fmt": {"bix": 8,  "len": 24, "max": 1,              "unit": "kilometers"   }, "name": "Directional stability control last activation distance"},
+    {"id": "SKODA_CSS_STR_TRQ",  "path": "Control", "fmt": {"bix": 32, "len": 16, "max": 1, "div": 1000, "unit": "newtonMeters" }, "name": "Directional stability control steering torque"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2005"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2005"}, "freq": 5,
   "signals": [
     {"id": "SKODA_P_BRAKE_SERVO_UNIT", "path": "Control", "fmt": { "len": 16, "max": 2047.9375, "min": -2048, "div": 16, "sign": true, "unit": "unknown" }, "name": "Pressure in brake servo unit"}
   ]},
@@ -390,9 +403,9 @@
     {"id": "SKODA_TIRE_RR_SPD_713", "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
     {"id": "SKODA_TIRE_RR_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2B21"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2B21"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_BRAKE_P_V2", "path": "Control", "fmt": { "len": 16, "max": 458.8288, "min": -543.8501, "mul": 152999, "div": 10000000, "add": -42.503, "sign": true, "unit": "bars" }, "name": "Brake pressure"}
+    {"id": "SKODA_BRAKE_P", "path": "Control", "fmt": { "len": 16, "max": 458.8288, "min": -543.8501, "mul": 152999, "div": 10000000, "add": -42.503, "sign": true, "unit": "bars" }, "name": "Brake pressure"}
   ]},
 { "hdr": "713", "rax": "77D", "dbg": true, "cmd": {"22": "2B29"}, "freq": 0.1,
   "signals": [
@@ -416,10 +429,6 @@
 { "hdr": "714", "dbg": true, "cmd": {"22": "22B0"}, "freq": 30,
   "signals": [
     {"id": "SKODA_FLI_VOL", "path": "Fuel", "fmt": {"bix": 336, "len": 16, "max": 6553.5, "div": 10, "unit": "liters" }, "name": "Fuel level (volume)"}
-  ]},
-{ "hdr": "714", "dbg": true, "cmd": {"22": "2613"}, "freq": 30,
-  "signals": [
-    {"id": "SKODA_IAT", "path": "Climate", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "celsius" }, "name": "Interior air temperature"}
   ]},
 { "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "0530"}, "freq": 0.5,
   "signals": [
@@ -464,6 +473,10 @@
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "22E0"}, "freq": 1,
   "signals": [
     {"id": "SKODA_RANGE_DSP", "path": "Trips", "fmt": { "len": 16, "max": 65535, "nullmax": 65535, "unit": "kilometers" }, "name": "Range remaining, displayed", "suggestedMetric": "electricRange"}
+  ]},
+{ "hdr": "714", "rax": "77E", "din": "03", "dbg": true, "cmd": {"22": "2613"}, "freq": 5,
+  "signals": [
+    {"id": "SKODA_IAT", "path": "Engine", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
 { "hdr": "715", "rax": "77F", "fcm1": true, "dbg": true, "cmd": {"22": "2353"}, "freq": 3600,
   "signals": [
@@ -574,11 +587,11 @@
   "signals": [
     {"id": "SKODA_CHG_HV_I_SET", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 63.749, "div": 4, "unit": "amps" }, "name": "Charger output current setpoint"}
   ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103D"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103D"}, "freq": 5,
   "signals": [
     {"id": "SKODA_OBC_HVDC_C", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "amps" }, "name": "On-board charger, hv/dc current"}
   ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103E"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103E"}, "freq": 5,
   "signals": [
     {"id": "SKODA_OBC_CYCLE_ENERGY", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "kilowattHours" }, "name": "Cycle energy transformation"}
   ]},
@@ -588,7 +601,7 @@
     {"id": "SKODA_CHRGR_RAIL2_E", "path": "Battery", "fmt": {"bix": 24, "len": 24, "max": 1677721, "div": 10, "unit": "kilowattHours" }, "name": "Rail 2 energy transformation"},
     {"id": "SKODA_CHRGR_RAIL3_E", "path": "Battery", "fmt": {"bix": 48, "len": 24, "max": 1677721, "div": 10, "unit": "kilowattHours" }, "name": "Rail 3 energy transformation"}
   ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1525"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1525"}, "freq": 5,
   "signals": [
     {"id": "SKODA_OBC_V_PROX_A", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "millivolts" }, "name": "Voltage proximity, socket a"}
   ]},
@@ -648,7 +661,7 @@
   "signals": [
     {"id": "SKODA_CHRGR_CHG_PWR_MAX", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "unknown" }, "name": "Maximum charge power"}
   ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1DDA"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1DDA"}, "freq": 5,
   "signals": [
     {"id": "SKODA_OBC_T_A", "path": "Battery", "fmt": {"bix": 8, "len": 16, "max": 6498.5, "min": -55, "div": 10, "add": -55, "unit": "celsius" }, "name": "Temperature sensor, socket a"}
   ]},
@@ -656,22 +669,22 @@
   "signals": [
     {"id": "SKODA_HVBAT_KWH_V2", "path": "Battery", "fmt": { "len": 16, "max": 3276.75, "div": 20, "unit": "kilowattHours" }, "name": "HV battery energy", "suggestedMetric": "tractionBatteryCapacity", "description": "Energy stored in the high voltage battery"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "0800"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "0800"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_AC_COMPRESSOR_PWR_ACT", "path": "Climate", "fmt": {"bix": 40, "len": 16, "max": 65535, "unit": "watts" }, "name": "A/C compressor power, actual"}
+    {"id": "SKODA_AC_CMPR_PWR_ACT", "path": "Climate", "fmt": {"bix": 40, "len": 16, "max": 65535, "unit": "watts" }, "name": "A/C compressor power, actual"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2603"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2603"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_AC_COMP_SPD", "path": "Movement", "fmt": { "len": 8, "max": 25500, "mul": 100, "unit": "rpm" }, "name": "Air conditioning compressor speed"}
+    {"id": "SKODA_A_C_CMPR_SPEED", "path": "Movement", "fmt": { "len": 8, "max": 25500, "mul": 100, "unit": "rpm" }, "name": "A/C compressor, speed"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2604"}, "freq": 1,
   "signals": [
     {"id": "SKODA_HVAC_AC_LOAD",      "path": "Climate", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "newtonMeters" }, "name": "A/C compressor load"},
     {"id": "SKODA_PQ35_AC_COMP_LOAD", "path": "Climate", "fmt": { "len": 8,  "max": 25.5,   "div": 10, "unit": "newtonMeters" }, "name": "Air conditioning compressor load"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2605"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2605"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_REF_P",       "path": "Climate", "fmt": { "len": 8, "max": 51,             "div": 5, "unit": "bars" }, "name": "Refrigerant pressure"},
+    {"id": "SKODA_REFRIG_P",         "path": "Climate", "fmt": { "len": 8, "max": 51,             "div": 5, "unit": "bars" }, "name": "Refrigerant pressure"},
     {"id": "SKODA_CLIMATE_REFRIG_P", "path": "Engine",  "fmt": { "len": 8, "max": 51, "mul": 0.2,           "unit": "bars" }, "name": "Refrigerant pressure"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2606"}, "freq": 1,
@@ -689,78 +702,79 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2609"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_HVAC_OUTSIDE_T", "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,             "div": 10,             "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "SKODA_HVAC_OUTSIDE_T", "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,             "div": 10,             "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
     {"id": "SKODA_PQ35_OUT_T",     "path": "Engine",  "fmt": { "len": 8,  "max": 63.5,   "min": -64,                 "div": 2,              "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
     {"id": "SKODA_AAT_V3",         "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "mul": 0.5,                        "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
     {"id": "SKODA_AAT_746",        "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,                 "div": 2,  "add": -50,               "unit": "celsius" }, "name": "Outside temperature"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260A"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260A"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_AAT_CABIN",        "path": "Engine", "fmt": { "len": 8, "max": 77.5, "min": -50, "mul": 0.5,           "add": -50,               "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"},
-    {"id": "SKODA_OUTSIDE_T_SYSTEM", "path": "Engine", "fmt": { "len": 8, "max": 63.5, "min": -64,             "div": 2,             "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"}
+    {"id": "SKODA_AAT_CABIN",        "path": "Climate", "fmt": { "len": 8, "max": 77.5, "min": -50, "div": 2, "add": -50,               "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"},
+    {"id": "SKODA_OUTSIDE_T_SYSTEM", "path": "Engine",  "fmt": { "len": 8, "max": 63.5, "min": -64, "div": 2,             "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "260C"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260C"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_FL_DEFL_T",         "path": "Engine",  "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Front left air vent temperature"},
+    {"id": "SKODA_FL_DEFL_T",              "path": "Climate", "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Temperature, front left deflector"},
     {"id": "SKODA_FRONT_LEFT_DEFLECTOR_T", "path": "Climate", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Front left deflector temperature"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "260D"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260D"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_FR_DEFL_T",          "path": "Engine",  "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Front right air vent temperature"},
+    {"id": "SKODA_FR_DEFL_T",               "path": "Climate", "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Temperature, front right deflector"},
     {"id": "SKODA_FRONT_RIGHT_DEFLECTOR_T", "path": "Climate", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Front right deflector temperature"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2611"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2611"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_LEG_DEFL_T", "path": "Engine",  "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Leg air vent temperature"},
+    {"id": "SKODA_LEG_DEFL_T",      "path": "Climate", "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Leg air vent temperature"},
     {"id": "SKODA_LEG_DEFLECTOR_T", "path": "Climate", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Leg deflector temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_HVAC_EVAP_T",        "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Evaporator output temperature"},
+    {"id": "SKODA_HVAC_EVAP_T",        "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Evaporator output temperature"},
     {"id": "SKODA_PQ35_EVAP_OUT_T",    "path": "Engine",  "fmt": { "len": 8,  "max": 42.291, "min": -42.624, "mul": 0.333,            "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"},
     {"id": "SKODA_T_AFTER_EVAPORATOR", "path": "Climate", "fmt": { "len": 8,  "max": 42.291, "min": -42.624,               "div": 3,  "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2613"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_HVAC_INTERIOR_T", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,             "div": 10, "sign": true, "unit": "celsius" }, "name": "Interior temperature"},
-    {"id": "SKODA_CABIN_T",         "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "mul": 0.1,            "sign": true, "unit": "celsius" }, "name": "Cabin temperature"}
+    {"id": "SKODA_HVAC_INTERIOR_T", "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,             "div": 10, "sign": true, "unit": "celsius" }, "name": "Interior temperature"},
+    {"id": "SKODA_CABIN_T",         "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "mul": 0.1,            "sign": true, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261E"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261E"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_RECIRC_FLAP_ACT", "path": "Climate", "fmt": {           "len": 16, "max": 65535,             "unit": "scalar"  }, "name": "Recirculation flap actual position"},
-    {"id": "SKODA_RECIRC_FLAP_ACT_PCT", "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,   "mul": 0.5, "unit": "percent" }, "name": "Recirculation flap, actual"}
+    {"id": "SKODA_RECIRC_ACT_STEPS",    "path": "Climate", "fmt": {           "len": 16, "max": 65535,                       "unit": "scalar"  }, "name": "Recirculation flap, actual steps"},
+    {"id": "SKODA_RECIRC_ACT_PCT",      "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,               "div": 2, "unit": "percent" }, "name": "Recirculation flap, actual"},
+    {"id": "SKODA_RECIRC_FLAP_ACT_PCT", "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,   "mul": 0.5,           "unit": "percent" }, "name": "Recirculation flap, actual"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261F"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261F"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_RECIRC_FLAP_TRG", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Recirculation flap target position"}
+    {"id": "SKODA_RECIRC_CMD_STEPS", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Recirculation flap, commanded steps"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2620"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2620"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_RECIRC_FLAP_FRESH_THR", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Recirculation flap fresh air threshold"}
+    {"id": "SKODA_RECIRC_STOP_FRESH", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Recirculation flap stop, fresh air"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2621"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2621"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_RECIRC_FLAP_THR", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Recirculation flap threshold"}
+    {"id": "SKODA_RECIRC_STOP_RECIRC", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Recirculation flap stop, recirculated air"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2622"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2622"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_FL_TEMP_FLAP",            "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front left temperature flap position"},
-    {"id": "SKODA_CLIMATE_FR_L_T_FLP_ACT_VALUE", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front left temperature flap actual value"}
+    {"id": "SKODA_FL_T_FLAP_ACT",                "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front left temperature flap actual"},
+    {"id": "SKODA_CLIMATE_FR_L_T_FLP_ACT_VALUE", "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front left temperature flap actual value"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2626"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2626"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_FR_TEMP_FLAP",            "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front right temperature flap position"},
-    {"id": "SKODA_CLIMATE_FR_R_T_FLP_ACT_VALUE", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front right temperature flap actual value"}
+    {"id": "SKODA_FR_T_FLAP_ACT",                "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front right temperature flap actual"},
+    {"id": "SKODA_CLIMATE_FR_R_T_FLP_ACT_VALUE", "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front right temperature flap actual value"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "263D"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "263D"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_REAR_DEFL_T",  "path": "Engine", "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Rear air vent temperature"},
-    {"id": "SKODA_CLIMATE_RR_DEFL_T", "path": "Engine", "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Rear deflector temperature"}
+    {"id": "SKODA_REAR_DEFL_T",       "path": "Climate", "fmt": { "len": 8, "max": 84.915, "mul": 0.333,           "unit": "celsius" }, "name": "Temperature, rear deflector"},
+    {"id": "SKODA_CLIMATE_RR_DEFL_T", "path": "Engine",  "fmt": { "len": 8, "max": 84.915,               "div": 3, "unit": "celsius" }, "name": "Rear deflector temperature"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "26ED"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "26ED"}, "freq": 5,
   "signals": [
+    {"id": "SKODA_AIR_POLLUTION",            "path": "Climate", "fmt": { "len": 8, "max": 12.7, "min": -12.7,             "div": 10, "sign": true, "unit": "scalar" }, "name": "Air pollution level", "description": "0 means clean air."},
     {"id": "SKODA_PQ35_AIR_QUAL",            "path": "Climate", "fmt": { "len": 8, "max": 12.7, "min": -12.8,             "div": 10, "sign": true, "unit": "scalar" }, "name": "Air quality level"},
-    {"id": "SKODA_AIR_POLUTION",             "path": "Climate", "fmt": { "len": 8, "max": 12.7, "min": -12.7,             "div": 10, "sign": true, "unit": "scalar" }, "name": "Air pollution level", "description": "0 means clean air."},
     {"id": "SKODA_CLIMATE_AIR_POLUTION_LVL", "path": "Engine",  "fmt": { "len": 8, "max": 12.7, "min": -12.8, "mul": 0.1,            "sign": true, "unit": "scalar" }, "name": "Air pollution level"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "27C3"}, "freq": 1,
@@ -772,19 +786,19 @@
     {"id": "SKODA_WNDSHLD_TEMP",    "path": "Climate", "fmt": {           "len": 8, "max": 108.08, "min": -38.8, "mul": 0.576,           "add": -38.8, "unit": "celsius" }, "name": "Windshield temperature"},
     {"id": "SKODA_HVAC_INSIDE_HUM", "path": "Climate", "fmt": {"bix": 32, "len": 8, "max": 100,                                "div": 2,               "unit": "percent" }, "name": "Inside humidity"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "27D6"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "27D6"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_PQ35_AC_COMP_PWR", "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 10.2, "div": 25, "unit": "kilowatts" }, "name": "Air conditioning compressor power consumption"}
+    {"id": "SKODA_AC_COMP_PWR", "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 10.2, "div": 25, "unit": "kilowatts" }, "name": "Air conditioning compressor power consumption"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "42DB"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "42DB"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_CO2_CONTENT_INTERIOR", "path": "Climate", "fmt": {"bix": 8, "len": 8, "max": 25500, "mul": 100, "unit": "scalar" }, "name": "CO2 content interior"}
+    {"id": "SKODA_CABIN_CO2", "path": "Climate", "fmt": {"bix": 8, "len": 8, "max": 25500, "mul": 100, "unit": "scalar" }, "name": "CO2 content interior"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "482B"}, "freq": 1,
   "signals": [
     {"id": "SKODA_PQ35_AC_CLUTCH", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Air conditioning clutch engagement"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "4EEF"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "4EEF"}, "freq": 5,
   "signals": [
     {"id": "SKODA_AC_REFRIG_P_SENS1",     "path": "Climate", "fmt": {           "len": 16, "max": 576.708,             "mul": 88, "div": 10000,             "unit": "bars"    }, "name": "A/C refrigerant pressure, sensor 1"},
     {"id": "SKODA_AC_REFRIG_T_SENS1",     "path": "Climate", "fmt": {"bix": 16, "len": 16, "max": 6513.5,  "min": -40, "mul": 10, "div": 100,   "add": -40, "unit": "celsius" }, "name": "A/C refrigerant temperature, sensor 1"},
@@ -798,18 +812,18 @@
   "signals": [
     {"id": "SKODA_DIST_DETECTED", "path": "Trips", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "meters" }, "name": "Distance to detected pedestrian"}
   ]},
-{ "hdr": "767", "rax": "7D1", "fcm1": true, "dbg": true, "cmd": {"22": "0838"}, "freq": 1,
+{ "hdr": "767", "rax": "7D1", "fcm1": true, "dbg": true, "cmd": {"22": "0838"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_MQB_ECALL_BAT_CRIT",          "path": "Battery", "fmt": {          "len": 8, "max": 100, "unit": "percent" }, "name": "Emergency call battery critical status"},
+    {"id": "SKODA_ECALL_BAT_CRIT",              "path": "Battery", "fmt": {          "len": 8, "max": 100, "unit": "percent" }, "name": "Emergency call battery critical status"},
     {"id": "SKODA_ECALL_BATTERY_CHARGE_STATUS", "path": "Battery", "fmt": {          "len": 8, "max": 100, "unit": "scalar"  }, "name": "Ecall battery charge status"},
-    {"id": "SKODA_MQB_ECALL_BAT_LVL",           "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 100, "unit": "percent" }, "name": "Emergency call battery level"},
+    {"id": "SKODA_ECALL_BAT_LVL",               "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 100, "unit": "percent" }, "name": "Emergency call battery level"},
     {"id": "SKODA_ECALL_STATUS", "path": "Battery", "name": "eCall battery status", "fmt": {"len": 8, "map": {
           "1": { "description": "CRITICAL", "value": "CRITICAL" },
           "2": { "description": "NORMAL",   "value": "NORMAL" }
         }}
     }
   ]},
-{ "hdr": "767", "rax": "7D1", "fcm1": true, "dbg": true, "cmd": {"22": "2431"}, "freq": 1,
+{ "hdr": "767", "rax": "7D1", "fcm1": true, "dbg": true, "cmd": {"22": "2431"}, "freq": 5,
   "signals": [
     {"id": "SKODA_GPS_SATS_VISIBLE", "path": "GPS", "fmt": {          "len": 8, "max": 255, "unit": "scalar" }, "name": "Satellites, visible"},
     {"id": "SKODA_GPS_SATS_TRACKED", "path": "GPS", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "scalar" }, "name": "Satellites, tracked"}
@@ -846,7 +860,7 @@
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "105C"}, "freq": 1,
   "signals": [
     {"id": "SKODA_PQ35_GEN_LOAD", "path": "Engine",  "fmt": { "len": 16, "max": 100,    "div": 100, "unit": "percent" }, "name": "Generator load"},
-    {"id": "SKODA_BRAKE_P",       "path": "Control", "fmt": { "len": 16, "max": 6553.5, "div": 10,  "unit": "bars"    }, "name": "Brake pressure"}
+    {"id": "SKODA_BRAKE_P_V2",    "path": "Control", "fmt": { "len": 16, "max": 6553.5, "div": 10,  "unit": "bars"    }, "name": "Brake pressure"}
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "105E"}, "freq": 1,
   "signals": [
@@ -5250,6 +5264,14 @@
   "signals": [
     {"id": "SKODA_BMS_I", "path": "Battery", "fmt": { "len": 16, "max": 166269, "min": -1500, "mul": 2.56, "add": -1500, "nullmin": -1500, "unit": "amps" }, "name": "HV battery current", "suggestedMetric": "tractionBatteryCurrent"}
   ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "180A"}, "freq": 1,
+  "signals": [
+    {"id": "SKODA_HVBAT_V_180A", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 2", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "180B"}, "freq": 1,
+  "signals": [
+    {"id": "SKODA_HVBAT_V_180B", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 3", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
+  ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "180C"}, "freq": 1,
   "signals": [
     {"id": "SKODA_BMS_BMCE_T1", "path": "Engine", "fmt": { "len": 8, "max": 205, "min": -50, "add": -50, "unit": "celsius" }, "name": "BMC-E temperature, 1"}
@@ -5269,6 +5291,14 @@
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1810"}, "freq": 1,
   "signals": [
     {"id": "SKODA_BMS_BMCE_T_CAN", "path": "Engine", "fmt": { "len": 8, "max": 205, "min": -40, "div": 2, "add": -40, "unit": "celsius" }, "name": "BMC-E temperature, 4"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1818"}, "freq": 1,
+  "signals": [
+    {"id": "SKODA_HVBAT_V_1818", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 4", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "181B"}, "freq": 1,
+  "signals": [
+    {"id": "SKODA_HVBAT_V_181B", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 5", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "181C"}, "freq": 1,
   "signals": [
@@ -6032,7 +6062,7 @@
     {"id": "SKODA_HVBAT_AH_DISCHG",     "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 3909350,    "min": -3909350,    "div": 549.31642,  "sign": true, "unit": "ampereHours"   }, "name": "HV battery discharge throughput"},
     {"id": "SKODA_HVBAT_KWH_CHG",       "path": "Battery", "fmt": {"bix": 64, "len": 32, "max": 500300,                         "div": 8583.07212,               "unit": "kilowattHours" }, "name": "HV battery energy charged"},
     {"id": "SKODA_HVBAT_KWH_DISCHG",    "path": "Battery", "fmt": {"bix": 96, "len": 32, "max": 250199.883, "min": -250199.883, "div": 8583.07212, "sign": true, "unit": "kilowattHours" }, "name": "HV battery energy discharged"},
-    {"id": "SKODA_HVBAT_TOT_KWH_DCHRG", "path": "Battery", "fmt": {"bix": 96, "len": 32, "max": 250300,     "min": -250300,     "div": 8583.07212, "sign": true, "unit": "kilowattHours" }, "name": "HV battery total kilowatt hours of discharge"}
+    {"id": "SKODA_HVBAT_TOT_KWH_DCHRG", "path": "Battery", "fmt": {"bix": 96, "len": 32, "max": 250199,     "min": -250199,     "div": 8583.07212, "sign": true, "unit": "kilowattHours" }, "name": "HV battery total kilowatt hours of discharge"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E3B"}, "freq": 1,
   "signals": [

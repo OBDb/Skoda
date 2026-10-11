@@ -10,7 +10,7 @@
     { "hdr": "7E5", "type": "battery" }
   ],
   "commands": [
-{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 5,
+{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 1,
   "signals": [
     {"id": "SKODA_TID_RL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Rear left tire sensor id"},
     {"id": "SKODA_TP_FR",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front right tire pressure",            "suggestedMetric": "frontRightTirePressure"},
@@ -31,7 +31,7 @@
         }}
     }
   ]},
-{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 5,
+{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 1,
   "signals": [
     {"id": "SKODA_TID_FR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Front right tire sensor id"},
     {"id": "SKODA_TP_FL",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Front left tire pressure",            "suggestedMetric": "frontLeftTirePressure"},
@@ -51,7 +51,7 @@
         }}
     }
   ]},
-{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A2"}, "freq": 5,
+{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A2"}, "freq": 1,
   "signals": [
     {"id": "SKODA_TID_RR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Rear right tire sensor id"},
     {"id": "SKODA_TP_RL_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear left tire pressure",            "suggestedMetric": "rearLeftTirePressure"},
@@ -72,7 +72,7 @@
         }}
     }
   ]},
-{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 5,
+{ "hdr": "70B", "rax": "775", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 1,
   "signals": [
     {"id": "SKODA_TID_FL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                       "unit": "scalar"  }, "name": "Front left tire sensor id"},
     {"id": "SKODA_TP_RR_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,             "nullmax": 6.37, "unit": "bars"    }, "name": "Rear right tire pressure",            "suggestedMetric": "rearRightTirePressure"},
@@ -295,7 +295,7 @@
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 1,
   "signals": [
     {"id": "SKODA_SSB_SENSOR_T", "path": "Battery", "fmt": {          "len": 8,  "max": 215,      "min": -40, "add": -40, "unit": "celsius"    }, "name": "Start/stop battery sensor temperature"},
-    {"id": "SKODA_ODO_3",        "path": "Trips",   "fmt": {          "len": 32, "max": 255,                              "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
+    {"id": "SKODA_ODO_3_V2",     "path": "Trips",   "fmt": {          "len": 32, "max": 255,                              "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
     {"id": "SKODA_MQB_ODO",      "path": "Trips",   "fmt": {"bix": 8, "len": 24, "max": 16777175,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
     {"id": "SKODA_ODO_V2",       "path": "Trips",   "fmt": {"bix": 8, "len": 24, "max": 16777175, "min": -40, "add": -40, "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"}
   ]},
@@ -315,8 +315,8 @@
   "signals": [
     {"id": "SKODA_SSB_R",           "path": "Battery", "fmt": { "len": 8, "max": 51,                 "mul": 2,  "div": 10,                "unit": "milliohms" }, "name": "Start/stop battery resistance"},
     {"id": "SKODA_BAT_INT_R",       "path": "Battery", "fmt": { "len": 8, "max": 51,                 "mul": 20, "div": 100,               "unit": "unknown"   }, "name": "Battery internal resistance"},
-    {"id": "SKODA_MQB_BAT_INT_RES", "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "unknown"   }, "name": "Battery internal resistance"},
-    {"id": "SKODA_SSB_RES_INT",     "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "scalar"    }, "name": "Battery internal resistance"}
+    {"id": "SKODA_SSB_RES_INT",     "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "scalar"    }, "name": "Battery internal resistance"},
+    {"id": "SKODA_MQB_BAT_INT_RES", "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "unknown"   }, "name": "Battery internal resistance"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0F"}, "freq": 5,
   "signals": [
@@ -552,27 +552,27 @@
 { "hdr": "713", "rax": "77D", "dbg": true, "cmd": {"22": "2B1B"}, "freq": 0.25,
   "signals": [
     {"id": "SKODA_TIRE_FL_SPD_713", "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "SKODA_TIRE_FL_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
+    {"id": "SKODA_TIRE_FL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
   ]},
 { "hdr": "713", "rax": "77D", "dbg": true, "cmd": {"22": "2B1C"}, "freq": 0.25,
   "signals": [
     {"id": "SKODA_TIRE_FR_SPD_713", "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
-    {"id": "SKODA_TIRE_FR_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
+    {"id": "SKODA_TIRE_FR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
   ]},
 { "hdr": "713", "rax": "77D", "dbg": true, "cmd": {"22": "2B1D"}, "freq": 0.25,
   "signals": [
     {"id": "SKODA_TIRE_RL_SPD_713", "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "SKODA_TIRE_RL_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "SKODA_TIRE_RL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
 { "hdr": "713", "rax": "77D", "dbg": true, "cmd": {"22": "2B1E"}, "freq": 0.25,
   "signals": [
     {"id": "SKODA_TIRE_RR_SPD_713", "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "nullmax": 1000, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "SKODA_TIRE_RR_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+    {"id": "SKODA_TIRE_RR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2B21"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_BRAKE_P", "path": "Control", "fmt": { "len": 16, "max": 458.8288, "min": -543.8501, "mul": 152999, "div": 10000000, "add": -42.503, "sign": true, "unit": "bars" }, "name": "Brake pressure"},
-    {"id": "SKODA_BREAK_P", "path": "Engine",  "fmt": { "len": 16, "max": 458,      "min": -543,      "mul": 152999, "div": 10000000, "add": -42.503, "sign": true, "unit": "bars" }, "name": "Break pressure"}
+    {"id": "SKODA_BRAKE_P_V2", "path": "Control", "fmt": { "len": 16, "max": 458.8288, "min": -543.8501, "mul": 152999, "div": 10000000, "add": -42.503, "sign": true, "unit": "bars" }, "name": "Brake pressure"},
+    {"id": "SKODA_BREAK_P",    "path": "Engine",  "fmt": { "len": 16, "max": 458,      "min": -543,      "mul": 152999, "div": 10000000, "add": -42.503, "sign": true, "unit": "bars" }, "name": "Break pressure"}
   ]},
 { "hdr": "713", "rax": "77D", "dbg": true, "cmd": {"22": "2B29"}, "freq": 0.1,
   "signals": [
@@ -926,15 +926,15 @@
   "signals": [
     {"id": "SKODA_CLIMATE_RAD_FAN_ACT_DUTY", "path": "Engine",  "fmt": {           "len": 8,  "max": 100,                "div": 2.5, "unit": "percent" }, "name": "Radiator fan actual duty"},
     {"id": "SKODA_HVAC_FAN1_ACT",            "path": "Climate", "fmt": {           "len": 16, "max": 6553.5,             "div": 10,  "unit": "percent" }, "name": "Radiator fan actual value #1"},
-    {"id": "SKODA_PQ35_RAD_FAN_DUTY",        "path": "Climate", "fmt": {           "len": 8,  "max": 100,    "mul": 0.4,             "unit": "percent" }, "name": "Radiator fan duty"},
+    {"id": "SKODA_RADIATOR_FAN_ACTUAL_DUTY", "path": "Climate", "fmt": {           "len": 8,  "max": 100,    "mul": 0.4,             "unit": "percent" }, "name": "Radiator fan actual duty"},
     {"id": "SKODA_RAD_FAN_ACT_DUTY",         "path": "Climate", "fmt": {           "len": 8,  "max": 100,    "mul": 2,   "div": 5,   "unit": "percent" }, "name": "Radiator fan actual duty"},
     {"id": "SKODA_HVAC_FAN2_ACT",            "path": "Climate", "fmt": {"bix": 16, "len": 16, "max": 6553.5,             "div": 10,  "unit": "percent" }, "name": "Radiator fan actual value #2"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2607"}, "freq": 2,
   "signals": [
-    {"id": "SKODA_CLIMATE_RAD_FAN_CMD_DUTY", "path": "Engine",  "fmt": { "len": 8,  "max": 100,                "div": 2.5, "unit": "percent" }, "name": "Radiator fan commanded duty"},
-    {"id": "SKODA_HVAC_FAN_CMD",             "path": "Climate", "fmt": { "len": 16, "max": 6553.5,             "div": 10,  "unit": "percent" }, "name": "Radiator fan commanded value"},
-    {"id": "SKODA_PQ35_RAD_FAN_CMD",         "path": "Climate", "fmt": { "len": 8,  "max": 100,    "mul": 0.4,             "unit": "percent" }, "name": "Radiator fan commanded duty"}
+    {"id": "SKODA_CLIMATE_RAD_FAN_CMD_DUTY",    "path": "Engine",  "fmt": { "len": 8,  "max": 100,                "div": 2.5, "unit": "percent" }, "name": "Radiator fan commanded duty"},
+    {"id": "SKODA_HVAC_FAN_CMD",                "path": "Climate", "fmt": { "len": 16, "max": 6553.5,             "div": 10,  "unit": "percent" }, "name": "Radiator fan commanded value"},
+    {"id": "SKODA_RADIATOR_FAN_COMMANDED_DUTY", "path": "Climate", "fmt": { "len": 8,  "max": 100,    "mul": 0.4,             "unit": "percent" }, "name": "Radiator fan commanded duty"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2609"}, "freq": 5,
   "signals": [
@@ -1111,33 +1111,34 @@
   "signals": [
     {"id": "SKODA_AUX_PWR", "path": "Battery", "fmt": { "len": 16, "max": 262140, "mul": 4, "unit": "watts" }, "name": "Onboard electrical system power"}
   ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"22": "10E0"}, "freq": 30,
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "10E0"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_ODO_2",   "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, alternative", "suggestedMetric": "odometer"},
-    {"id": "SKODA_ODO_7E0", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"}
+    {"id": "SKODA_ODO_2_2",      "path": "Trips",  "fmt": { "len": 32, "max": 4294967295,                              "unit": "kilometers" }, "name": "Odometer, alternative",              "suggestedMetric": "odometer"},
+    {"id": "SKODA_ODO_7E0",      "path": "Trips",  "fmt": { "len": 32, "max": 4000000000,                              "unit": "kilometers" }, "name": "Odometer",                           "suggestedMetric": "odometer"},
+    {"id": "SKODA_ECM_10E0_RAW", "path": "Engine", "fmt": { "len": 16, "max": 65535,                                   "unit": "scalar"     }, "name": "Engine module 10E0, raw"},
+    {"id": "SKODA_10E0_RAW",     "path": "Engine", "fmt": { "len": 16, "max": 32767,      "min": -32768, "sign": true, "unit": "scalar"     }, "name": "Engine read 10E0, signed raw count"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "1139"}, "freq": 1,
+  "signals": [
+    {"id": "SKODA_MEAN_INJ_QUANTITY_2", "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68,              "div": 100, "sign": true, "unit": "unknown" }, "name": "Mean injection quantity"},
+    {"id": "SKODA_MEAN_INJ_QUANTITY",   "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "mul": 0.01,             "sign": true, "unit": "unknown" }, "name": "Mean injection quantity"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "1165"}, "freq": 5,
   "signals": [
     {"id": "SKODA_HVBAT_T_LOAD", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "percent" }, "name": "HV battery temperature load"}
   ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"22": "11BA"}, "freq": 15,
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "11BA"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_OIL_LEVEL", "path": "Engine", "fmt": { "len": 16, "max": 262,  "div": 250,  "unit": "unknown"     }, "name": "Oil level"},
-    {"id": "SKODA_OIL_LVL",   "path": "Engine", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"22": "11C4"}, "freq": 30,
-  "signals": [
-    {"id": "SKODA_OIL_MAX",          "path": "Fluids", "fmt": { "len": 16, "max": 262,    "div": 250, "unit": "centimeters" }, "name": "Oil level, max"},
-    {"id": "SKODA_PQ35_OIL_LVL_MAX", "path": "Engine", "fmt": { "len": 16, "max": 262.14, "div": 250, "unit": "millimeters" }, "name": "Oil maximum level"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"22": "11C5"}, "freq": 30,
-  "signals": [
-    {"id": "SKODA_OIL_MIN",          "path": "Fluids", "fmt": { "len": 16, "max": 262,    "div": 250, "unit": "centimeters" }, "name": "Oil level, min"},
-    {"id": "SKODA_PQ35_OIL_LVL_MIN", "path": "Engine", "fmt": { "len": 16, "max": 262.14, "div": 250, "unit": "millimeters" }, "name": "Oil minimum level"}
+    {"id": "SKODA_OIL_LEVEL_2", "path": "Engine", "fmt": { "len": 16, "max": 262,  "div": 250,  "unit": "unknown"     }, "name": "Oil level"},
+    {"id": "SKODA_OIL_LEVEL",   "path": "Fluids", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "121E"}, "freq": 1,
   "signals": [
     {"id": "SKODA_FUEL_P_REG_SPEC", "path": "Fuel", "fmt": { "len": 16, "max": 3276700, "min": -3276800, "mul": 100, "sign": true, "unit": "unknown" }, "name": "Fuel pressure regulator valve specified rail pressure"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "121F"}, "freq": 1,
+  "signals": [
+    {"id": "SKODA_HIGH_FUEL_P_CTRL_DEV", "path": "Fuel", "fmt": { "len": 16, "max": 3276700, "min": -3276800, "mul": 100, "sign": true, "unit": "unknown" }, "name": "High fuel pressure control deviation"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "147D"}, "freq": 0.25,
   "signals": [
@@ -1204,20 +1205,14 @@
   "signals": [
     {"id": "SKODA_MQB_DPF_DIFF_P_RAW_VALUE_2", "path": "Engine.DPF", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "unknown" }, "name": "Diesel particulate filter diff pressure: raw value 2"}
   ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"22": "295A"}, "freq": 30,
-  "signals": [
-    {"id": "SKODA_ODO_V2",      "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"},
-    {"id": "SKODA_ODO_2_V2",    "path": "Trips", "fmt": { "len": 32, "max": 4294967295,                     "unit": "kilometers" }, "name": "Odometer, alternative", "suggestedMetric": "odometer"},
-    {"id": "SKODA_ODO_MILEAGE", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer, mileage"},
-    {"id": "SKODA_ODO_ECM",     "path": "Trips", "fmt": { "len": 24, "max": 1048575,    "nullmax": 1048575, "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"}
-  ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "F433"}, "freq": 1,
   "signals": [
     {"id": "SKODA_BARO", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "F446"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_AAT_V2", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Ambient air temperature"}
+    {"id": "SKODA_AAT_V2",  "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Ambient air temperature"},
+    {"id": "SKODA_AAT_7E0", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "nullmax": 215, "unit": "celsius" }, "name": "Ambient air temperature"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "F449"}, "freq": 0.25,
   "signals": [
@@ -1397,8 +1392,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "1044"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_PQ35_DPF_SURF_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                    "unit": "celsius" }, "name": "Diesel particulate filter surface temperature"},
-    {"id": "SKODA_DPF_SFC_T",       "path": "Engine", "fmt": { "len": 16, "max": 3003.6, "min": -273.1, "div": 10, "add": -273.1, "nullmax": 3003.6, "unit": "celsius" }, "name": "Diesel particulate filter surface temperature"}
+    {"id": "SKODA_PQ35_DPF_SURF_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "nullmin": -273,                    "unit": "celsius" }, "name": "Diesel particulate filter surface temperature"},
+    {"id": "SKODA_DPF_SFC_T",       "path": "Engine", "fmt": { "len": 16, "max": 3003.6, "min": -273.1, "div": 10, "add": -273.1,                  "nullmax": 3003.6, "unit": "celsius" }, "name": "Diesel particulate filter surface temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1047"}, "freq": 0.25,
   "signals": [
@@ -1439,8 +1434,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "105C"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_GEN_LOAD",   "path": "Engine",  "fmt": { "len": 16, "max": 100,    "div": 100, "unit": "percent" }, "name": "Generator load"},
-    {"id": "SKODA_BRAKE_P_V2", "path": "Control", "fmt": { "len": 16, "max": 6553.5, "div": 10,  "unit": "bars"    }, "name": "Brake pressure"}
+    {"id": "SKODA_GEN_LOAD", "path": "Engine",  "fmt": { "len": 16, "max": 100,    "div": 100, "unit": "percent" }, "name": "Generator load"},
+    {"id": "SKODA_BRAKE_P",  "path": "Control", "fmt": { "len": 16, "max": 6553.5, "div": 10,  "unit": "bars"    }, "name": "Brake pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "105D"}, "freq": 0.25,
   "signals": [
@@ -1448,8 +1443,10 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "105E"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_BAT_V_2",      "path": "Battery", "fmt": { "len": 16, "max": 1310.7, "div": 50,                "unit": "volts" }, "name": "Battery voltage variant"},
-    {"id": "SKODA_PQ35_BAT_V_2", "path": "Battery", "fmt": { "len": 16, "max": 20,     "div": 50, "nullmax": 20, "unit": "volts" }, "name": "Battery voltage variant"}
+    {"id": "SKODA_BAT_V_2",        "path": "Battery", "fmt": { "len": 16, "max": 1310.7,                         "div": 50,                                            "unit": "volts"  }, "name": "Battery voltage variant"},
+    {"id": "SKODA_PQ35_BAT_V_2",   "path": "Battery", "fmt": { "len": 16, "max": 20,                             "div": 50,                             "nullmax": 20, "unit": "volts"  }, "name": "Battery voltage variant"},
+    {"id": "SKODA_PQ35_BAT_V_2_2", "path": "Battery", "fmt": { "len": 16, "max": 1310.7,                         "div": 50,               "nullmin": 0,                "unit": "volts"  }, "name": "Battery voltage variant"},
+    {"id": "SKODA_105E_RAW",       "path": "Battery", "fmt": { "len": 32, "max": 2147483647, "min": -2147483648,            "sign": true,                              "unit": "scalar" }, "name": "Engine read 105E, signed raw count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1063"}, "freq": 5,
   "signals": [
@@ -1674,8 +1671,9 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "10F3"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_OIL_LEVEL_LAST_VALID", "path": "Engine", "fmt": { "len": 8,  "max": 255,                                "unit": "scalar"  }, "name": "Oil level, raw count"},
-    {"id": "SKODA_PQ35_DPF_DIFF_P_2",    "path": "Engine", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "unknown" }, "name": "Diesel particulate filter differential pressure variant 2"}
+    {"id": "SKODA_OIL_LEVEL_LAST_VALID", "path": "Engine",    "fmt": { "len": 16, "max": 3968,  "min": -127,   "div": 16, "add": -127,               "unit": "millimeters" }, "name": "Oil level, last valid dynamic value"},
+    {"id": "SKODA_PQ35_DPF_DIFF_P_2",    "path": "Engine",    "fmt": { "len": 16, "max": 32767, "min": -32768,                         "sign": true, "unit": "unknown"     }, "name": "Diesel particulate filter differential pressure variant 2"},
+    {"id": "SKODA_DPF_DIFF_P_RAW",       "path": "Emissions", "fmt": { "len": 16, "max": 32767, "min": -32768,                         "sign": true, "unit": "scalar"      }, "name": "Particulate filter differential pressure, raw count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "10F4"}, "freq": 1,
   "signals": [
@@ -1804,7 +1802,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1123"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_AAT_7E0", "path": "Engine", "fmt": { "len": 16, "max": 6280, "min": -273, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Ambient temperature"}
+    {"id": "SKODA_AAT_7E0_V2", "path": "Engine", "fmt": { "len": 16, "max": 6280, "min": -273, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Ambient temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1124"}, "freq": 0.25,
   "signals": [
@@ -1834,7 +1832,7 @@
   "signals": [
     {"id": "SKODA_PQ35_COMP_TEST_CYL_2", "path": "Engine", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true, "unit": "rpm" }, "name": "Compression test cylinder 2"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "112B"}, "freq": 3600,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "112B"}, "freq": 1,
   "signals": [
     {"id": "SKODA_PQ35_COMP_TEST_CYL_3", "path": "Engine", "fmt": { "len": 16, "max": 16383.5, "min": -16384, "div": 2, "sign": true, "unit": "rpm" }, "name": "Compression test cylinder 3"}
   ]},
@@ -1897,10 +1895,6 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1138"}, "freq": 1,
   "signals": [
     {"id": "SKODA_SEG_AD_MMV_ER_H_0", "path": "Engine", "fmt": { "len": 16, "max": 7.8123, "min": -7.8125, "mul": 78123, "div": 327670000, "sign": true, "unit": "percent" }, "name": "SEG_AD_MMV_ER_H, 0"}
-  ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1139"}, "freq": 1,
-  "signals": [
-    {"id": "SKODA_MEAN_INJ_QUANTITY", "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "unknown" }, "name": "Mean injection quantity"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "113A"}, "freq": 1,
   "signals": [
@@ -1975,7 +1969,7 @@
   "signals": [
     {"id": "SKODA_MISFIRES_C3_ECM", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires, cylinder 3"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1151"}, "freq": 0.25,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1151"}, "freq": 1,
   "signals": [
     {"id": "SKODA_EM_RPM_1",         "path": "Engine", "fmt": { "len": 16, "max": 100,   "min": -100, "div": 2, "sign": true, "unit": "rpm"    }, "name": "Electric motor 1 rpm"},
     {"id": "SKODA_MISFIRES__CYL__4", "path": "ECU",    "fmt": { "len": 16, "max": 65535,                                      "unit": "scalar" }, "name": "Misfires, cylinder 4"}
@@ -1987,7 +1981,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1153"}, "freq": 10.25,
   "signals": [
-    {"id": "SKODA_EM_TORQ_1",            "path": "Engine",     "fmt": { "len": 16, "max": 1000,   "min": -1000,   "div": 32,  "sign": true, "unit": "newtonMeters" }, "name": "Electric motor 1 torque"},
+    {"id": "SKODA_1153_RAW",             "path": "Engine",     "fmt": { "len": 8,  "max": 255,                                              "unit": "scalar"       }, "name": "Engine read 1153, raw count"},
+    {"id": "SKODA_EM_TORQ_1",            "path": "Engine",     "fmt": { "len": 16, "max": 1000,   "min": -1000,   "div": 32,  "sign": true, "unit": "newtonMeters" }, "name": "Elector motor 1 torque"},
     {"id": "SKODA_PQ35_DPF_OIL_ASH_VOL", "path": "Engine.DPF", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "liters"       }, "name": "Diesel particulate filter oil ash volume"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1154"}, "freq": 1,
@@ -1999,7 +1994,7 @@
   "signals": [
     {"id": "SKODA_EM_TORQ_3", "path": "Engine", "fmt": { "len": 16, "max": 1000, "min": -1000, "div": 32, "sign": true, "unit": "newtonMeters" }, "name": "Elector motor 3 torque"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1156"}, "freq": 30,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1156"}, "freq": 1,
   "signals": [
     {"id": "SKODA_HVBAT_SOC_V2",         "path": "Battery",    "fmt": { "len": 8,  "max": 100,     "div": 2,    "unit": "percent"    }, "name": "High-voltage battery charge"},
     {"id": "SKODA_PQ35_DIST_LAST_REGEN", "path": "Engine.DPF", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Distance since last regeneration"},
@@ -2020,8 +2015,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "115B"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_VSS_DIR",            "path": "Movement", "fmt": { "len": 16, "max": 511, "min": -512, "div": 64, "sign": true, "unit": "kilometersPerHour" }, "name": "Vehicle speed, directional"},
-    {"id": "SKODA_PARTICLE_FLT_FIELD", "path": "Engine",   "fmt": { "len": 8,  "max": 255,                                       "unit": "scalar"            }, "name": "Particle filter, field regeneration request status"}
+    {"id": "SKODA_PARTICLE_FLT_FIELD", "path": "Engine",   "fmt": { "len": 8,  "max": 255,                                       "unit": "scalar"            }, "name": "Particle filter, field regeneration request status"},
+    {"id": "SKODA_VSS_DIR",            "path": "Movement", "fmt": { "len": 16, "max": 511, "min": -512, "div": 64, "sign": true, "unit": "kilometersPerHour" }, "name": "Vehicle speed, directional"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "115C"}, "freq": 30,
   "signals": [
@@ -2029,8 +2024,9 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "115E"}, "freq": 30,
   "signals": [
-    {"id": "SKODA_TIME_SINCE_REGEN",     "path": "Engine", "fmt": {          "len": 32,    "max": 71582788,                     "div": 60,                   "unit": "minutes" },                                      "name": "Time since last regen."},
-    {"id": "SKODA_PQ35_TIME_LAST_REGEN", "fmt":            {      "len": 32, "max": 0.426,                  "div": 10066666667,            "unit": "minutes" },                "name": "Time since last regeneration"}
+    {"id": "SKODA_TIME_SINCE_REGEN",     "path": "Engine",    "fmt": {          "len": 32,    "max": 71582788,                     "div": 60,                   "unit": "minutes" },                                      "name": "Time since last regen."},
+    {"id": "SKODA_PQ35_TIME_LAST_REGEN", "fmt":               {      "len": 32, "max": 0.426,                  "div": 10066666667,            "unit": "minutes" },                "name": "Time since last regeneration"},
+    {"id": "SKODA_TIME_SINCE_REGEN_RAW", "path": "Emissions", "fmt": {          "len": 16,    "max": 65535,                                                     "unit": "scalar"  },                                      "name": "Time since particulate filter regeneration, raw count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1160"}, "freq": 1,
   "signals": [
@@ -2042,9 +2038,9 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1164"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_HVBAT_SOC_DISP",       "path": "Battery", "fmt": { "len": 16, "max": 100,                         "div": 100, "unit": "percent" }, "name": "HV battery charge, displayed",                          "suggestedMetric": "stateOfCharge"},
-    {"id": "SKODA_PQ35_SRV_REGEN_DUR",   "path": "Battery", "fmt": { "len": 32, "max": 715827, "mul": 0.0001666667,             "unit": "minutes" }, "name": "Service regeneration current duration"},
-    {"id": "SKODA_SRV_REGEN_VALUE_2012", "path": "Battery", "fmt": { "len": 16, "max": 65535,                                   "unit": "scalar"  }, "name": "Service regeneration value, two-byte reply, raw count"}
+    {"id": "SKODA_HVBAT_SOC_DISP",     "path": "Battery", "fmt": { "len": 16, "max": 100,                         "div": 100, "unit": "percent" }, "name": "HV battery charge, displayed",          "suggestedMetric": "stateOfCharge"},
+    {"id": "SKODA_1164_RAW",           "path": "Engine",  "fmt": { "len": 16, "max": 65535,                                   "unit": "scalar"  }, "name": "Engine read 1164, raw count"},
+    {"id": "SKODA_PQ35_SRV_REGEN_DUR", "path": "Battery", "fmt": { "len": 32, "max": 715827, "mul": 0.0001666667,             "unit": "minutes" }, "name": "Service regeneration current duration"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1169"}, "freq": 1,
   "signals": [
@@ -2189,14 +2185,17 @@
   "signals": [
     {"id": "SKODA_OIL_LEVEL_WARN",    "path": "Fluids", "fmt": { "len": 16, "max": 26.2,                     "div": 2500,                              "unit": "centimeters" }, "name": "Oil level warning threshold"},
     {"id": "SKODA_EOT_ECM",           "path": "Engine", "fmt": { "len": 16, "max": 200,     "min": -40,      "div": 10,   "add": -273.1,               "unit": "celsius"     }, "name": "Engine oil temperature, engine control module"},
-    {"id": "SKODA_PQ35_OIL_LVL_CRIT", "path": "Engine", "fmt": { "len": 16, "max": 131.068, "min": -131.072, "div": 250,                 "sign": true, "unit": "millimeters" }, "name": "Critical engine oil level"}
+    {"id": "SKODA_PQ35_OIL_LVL_CRIT", "path": "Engine", "fmt": { "len": 16, "max": 131.068, "min": -131.072, "div": 250,                 "sign": true, "unit": "millimeters" }, "name": "Critical engine oil level"},
+    {"id": "SKODA_ECM_11BD_RAW",      "path": "Engine", "fmt": { "len": 8,  "max": 255,                                                                "unit": "scalar"      }, "name": "Engine module 11BD, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BE"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                                         "unit": "scalar"  }, "name": "Engine oil temperature",  "description": "Scaling is unknown, needs further validation."},
-    {"id": "SKODA_PQ35_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                                               "unit": "celsius" }, "name": "Oil temperature variant"},
-    {"id": "SKODA_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,    "div": 10, "add": -273.1,               "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",  "suggestedMetric": "engineOilTemperature"},
-    {"id": "SKODA_PQ46_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 300,    "min": -40,    "div": 10,                "sign": true,                                 "unit": "celsius" }, "name": "Oil temperature variant", "suggestedMetric": "engineOilTemperature"}
+    {"id": "SKODA_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                                           "unit": "scalar"  }, "name": "Engine oil temperature",             "description": "Scaling is unknown, needs further validation."},
+    {"id": "SKODA_PQ35_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,                                                "unit": "celsius" }, "name": "Oil temperature variant"},
+    {"id": "SKODA_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,     "div": 10, "add": -273.1,                "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",             "suggestedMetric": "engineOilTemperature"},
+    {"id": "SKODA_11BE_RAW",     "path": "Engine", "fmt": { "len": 16, "max": 32767,  "min": -32768,                             "sign": true,                                 "unit": "scalar"  }, "name": "Engine read 11BE, signed raw count"},
+    {"id": "SKODA_PQ46_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273.15, "div": 10, "add": -273.15,                                               "unit": "celsius" }, "name": "Oil temperature variant",            "suggestedMetric": "engineOilTemperature"},
+    {"id": "SKODA_ECM_11BE_RAW", "path": "Engine", "fmt": { "len": 8,  "max": 255,                                                                                             "unit": "scalar"  }, "name": "Engine module 11BE, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BF"}, "freq": 1,
   "signals": [
@@ -2209,6 +2208,16 @@
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "11C3"}, "freq": 1,
   "signals": [
     {"id": "SKODA_SERVICE_REGEN", "path": "Engine", "fmt": { "len": 32, "max": 42949672, "div": 100, "unit": "seconds" }, "name": "Service regeneration current duration"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11C4"}, "freq": 30,
+  "signals": [
+    {"id": "SKODA_OIL_MAX",          "path": "Fluids", "fmt": { "len": 8,  "max": 255,                "unit": "scalar"      }, "name": "Oil level, max, raw count"},
+    {"id": "SKODA_PQ35_OIL_LVL_MAX", "path": "Engine", "fmt": { "len": 16, "max": 262.14, "div": 250, "unit": "millimeters" }, "name": "Oil maximum level"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11C5"}, "freq": 30,
+  "signals": [
+    {"id": "SKODA_OIL_MIN",          "path": "Fluids", "fmt": { "len": 8,  "max": 255,                "unit": "scalar"      }, "name": "Oil level, min, raw count"},
+    {"id": "SKODA_PQ35_OIL_LVL_MIN", "path": "Engine", "fmt": { "len": 16, "max": 262.14, "div": 250, "unit": "millimeters" }, "name": "Oil minimum level"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11C8"}, "freq": 1,
   "signals": [
@@ -2389,10 +2398,6 @@
   "signals": [
     {"id": "SKODA_PRE_INJ_3_ACTIVATION_START", "path": "Engine", "fmt": { "len": 16, "max": 655, "min": -655, "div": 50, "sign": true, "unit": "degrees" }, "name": "Pre-injection 3, activation start"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "121F"}, "freq": 1,
-  "signals": [
-    {"id": "SKODA_HIGH_FUEL_P_CTRL_DEV", "path": "Fuel", "fmt": { "len": 16, "max": 3276700, "min": -3276800, "mul": 100, "sign": true, "unit": "unknown" }, "name": "High fuel pressure control deviation"}
-  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1221"}, "freq": 0.25,
   "signals": [
     {"id": "SKODA_ACCEL_PED_1", "path": "Movement", "fmt": { "len": 16, "max": 6553.4, "min": -6553.6, "div": 5, "sign": true, "unit": "millivolts" }, "name": "Accelerator pedal sensor 1"}
@@ -2521,10 +2526,10 @@
   "signals": [
     {"id": "SKODA_MQB_EGR_VALVE_2_B1_FLOW", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "mul": 1000, "div": 10000, "sign": true, "unit": "unknown" }, "name": "Exhaust gas recirculation valve 2 bank 1 mass flow"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "1314"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1314"}, "freq": 1,
   "signals": [
-    {"id": "SKODA_LOW_PRESS_EGR",      "path": "Engine", "fmt": { "len": 16, "max": 799,  "mul": 25, "div": 2048, "unit": "percent" }, "name": "Low press. EGR closing"},
-    {"id": "SKODA_PQ35_MEAN_AIR_MASS", "path": "Engine", "fmt": { "len": 16, "max": 2047,            "div": 32,   "unit": "unknown" }, "name": "Mean engine air mass"}
+    {"id": "SKODA_PQ35_MEAN_AIR_MASS", "path": "Engine", "fmt": { "len": 16, "max": 2047,            "div": 32,   "unit": "unknown" }, "name": "Mean engine air mass"},
+    {"id": "SKODA_LOW_PRESS_EGR",      "path": "Engine", "fmt": { "len": 16, "max": 799,  "mul": 25, "div": 2048, "unit": "percent" }, "name": "Low press. EGR closing"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "1334"}, "freq": 1,
   "signals": [
@@ -3099,12 +3104,14 @@
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "1628"}, "freq": 5,
   "signals": [
     {"id": "SKODA_INTERCOOLER_AIR_T",             "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273,   "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Intercooler air output temperature"},
-    {"id": "SKODA_PQ35_INTERCOOLER_AIR_OUTPUT_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Intercooler air output temperature"}
+    {"id": "SKODA_PQ35_INTERCOOLER_AIR_OUTPUT_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Intercooler air output temperature"},
+    {"id": "SKODA_INTERCOOLER_AIR_T_RAW",         "path": "Engine", "fmt": { "len": 8,  "max": 255,                                             "unit": "scalar"  }, "name": "Intercooler air temperature, raw count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "162D"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_FUEL_T_7E0",  "path": "Engine", "fmt": { "len": 16, "max": 300,    "min": -40,    "div": 10, "add": -273.1, "nullmin": -40, "nullmax": 300, "unit": "celsius" }, "name": "Fuel temperature"},
-    {"id": "SKODA_PQ35_FUEL_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                                 "unit": "celsius" }, "name": "Fuel temperature"}
+    {"id": "SKODA_FUEL_T_7E0",  "path": "Engine", "fmt": { "len": 16, "max": 300,        "min": -40,    "div": 10, "add": -273.1, "nullmin": -40, "nullmax": 300, "unit": "celsius" }, "name": "Fuel temperature"},
+    {"id": "SKODA_PQ35_FUEL_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4,     "min": -273.1, "div": 10, "add": -273.1,                                 "unit": "celsius" }, "name": "Fuel temperature"},
+    {"id": "SKODA_162D_RAW",    "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                                                                          "unit": "scalar"  }, "name": "Engine read 162D, raw count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1631"}, "freq": 1,
   "signals": [
@@ -3171,8 +3178,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "16A9"}, "freq": 30,
   "signals": [
-    {"id": "SKODA_ODO_MILEAGE_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, mileage"},
-    {"id": "SKODA_PQ35_ODO_2",     "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, alternate", "suggestedMetric": "odometer"}
+    {"id": "SKODA_ODO_MILEAGE", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, mileage"},
+    {"id": "SKODA_PQ35_ODO_2",  "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, alternate", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "16BA"}, "freq": 1,
   "signals": [
@@ -3543,6 +3550,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2005"}, "freq": 0.25,
   "signals": [
+    {"id": "SKODA_ECM_2005_RAW",         "path": "Engine",  "fmt": { "len": 8,  "max": 255,                                    "unit": "scalar"  }, "name": "Engine module 2005, raw"},
     {"id": "SKODA_BRAKE_BST_P",          "path": "Control", "fmt": { "len": 16, "max": 65.535,                    "div": 1000, "unit": "bars"    }, "name": "Brake booster pressure"},
     {"id": "SKODA_PQ35_BRAKE_BOOSTER_P", "path": "Control", "fmt": { "len": 16, "max": 5434,   "mul": 0.08291753,              "unit": "unknown" }, "name": "Brake booster pressure"}
   ]},
@@ -3985,6 +3993,13 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "294A"}, "freq": 1,
   "signals": [
     {"id": "SKODA_DYNAMIC_AVG_IGN_ANG", "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "degrees" }, "name": "Dynamic average of ignition angle delay adjustment"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295A"}, "freq": 30,
+  "signals": [
+    {"id": "SKODA_ODO_V2",         "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"},
+    {"id": "SKODA_ODO_2",          "path": "Trips", "fmt": { "len": 32, "max": 4294967295,                     "unit": "kilometers" }, "name": "Odometer, alternative", "suggestedMetric": "odometer"},
+    {"id": "SKODA_ODO_MILEAGE_V2", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer, mileage"},
+    {"id": "SKODA_ODO_ECM",        "path": "Trips", "fmt": { "len": 24, "max": 1048575,    "nullmax": 1048575, "unit": "kilometers" }, "name": "Odometer",              "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295B"}, "freq": 30,
   "signals": [
@@ -4830,7 +4845,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F42F"}, "freq": 30,
   "signals": [
-    {"id": "SKODA_FLI_INPUT", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Fuel level input %", "suggestedMetric": "fuelTankLevel"}
+    {"id": "SKODA_FLI_INPUT", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Fuel level input", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F430"}, "freq": 3600,
   "signals": [
@@ -4872,15 +4887,15 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0303"}, "freq": 900,
   "signals": [
-    {"id": "SKODA_DRIVE_TIME_ECO", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (eco)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode"}
+    {"id": "SKODA_DRIVE_TIME_ECO", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time in economy mode", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0304"}, "freq": 900,
   "signals": [
-    {"id": "SKODA_DRIVE_TIME_SPORT", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (sport)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode"}
+    {"id": "SKODA_DRIVE_TIME_SPORT", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time, sport", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0305"}, "freq": 900,
   "signals": [
-    {"id": "SKODA_DRIVE_TIME_MANUAL", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (manual)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode"}
+    {"id": "SKODA_DRIVE_TIME_MANUAL", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time, manual", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0327"}, "freq": 0.25,
   "signals": [
@@ -4888,34 +4903,36 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0805"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_BRAKE_LIGHT_ON_VALID", "path": "Control", "fmt": {"bix": 4, "len": 1, "max": 1, "unit": "noyes" }, "name": "Brake light reading valid?"},
+    {"id": "SKODA_BRAKE_LIGHT_ON_VALID", "path": "Lights",  "fmt": {"bix": 4, "len": 1, "max": 1, "unit": "noyes" }, "name": "Brake light reading valid?"},
     {"id": "SKODA_BRAKE_PRESSED_VALID",  "path": "Control", "fmt": {"bix": 5, "len": 1, "max": 1, "unit": "noyes" }, "name": "Brake pressure reading valid?"},
     {"id": "SKODA_BRAKE_PRESSED",        "path": "Control", "fmt": {"bix": 6, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake"},
-    {"id": "SKODA_BRAKE_LIGHT_ON",       "path": "Control", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake light"}
+    {"id": "SKODA_BRAKE_LIGHT_ON",       "path": "Lights",  "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake light"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1001"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_TIRE_FR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "SKODA_TIRE_FR_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
     {"id": "SKODA_TIRE_FR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
-    {"id": "SKODA_TIRE_FR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
+    {"id": "SKODA_TIRE_FR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "SKODA_TCM_1001_RAW",    "path": "Movement", "fmt": { "len": 8,  "max": 255,                                "unit": "scalar"            }, "name": "Transmission read 1001, first byte raw count"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1002"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_TIRE_FL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "SKODA_TIRE_FL_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
     {"id": "SKODA_TIRE_FL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
     {"id": "SKODA_TIRE_FL_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1003"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_TIRE_RR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "SKODA_TIRE_RR_SPD",     "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
     {"id": "SKODA_TIRE_RR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
     {"id": "SKODA_TIRE_RR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1004"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_TIRE_RL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "SKODA_TIRE_RL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "SKODA_TIRE_RL_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "SKODA_TIRE_RL_SPD",     "path": "Movement",     "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "SKODA_TIRE_RL_SPD_7E1", "path": "Movement",     "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "SKODA_TIRE_RL_SPD_V3",  "path": "Movement",     "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "SKODA_TCM_1004_RAW",    "path": "Transmission", "fmt": { "len": 16, "max": 65535,                              "unit": "scalar"            }, "name": "Transmission value 1004, raw"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1005"}, "freq": 0.25,
   "signals": [
@@ -4978,7 +4995,7 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "101A"}, "freq": 30,
   "signals": [
-    {"id": "SKODA_ODO_MILEAGE_2", "path": "Trips", "fmt": { "len": 16, "max": 65535,                     "unit": "kilometers" },                   "name": "Odometer, mileage 2"},
+    {"id": "SKODA_ODO_MILEAGE_2", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                  "unit": "kilometers" },                   "name": "Odometer, mileage 2"},
     {"id": "SKODA_PQ35_ODO_3",    "path": "Trips", "fmt": { "len": 24, "max": 16777215,                  "unit": "kilometers" },                   "name": "Odometer #3",         "suggestedMetric": "odometer"},
     {"id": "SKODA_ODO_TCM_2",     "path": "Trips", "fmt": { "len": 24, "blsb": true,    "max": 16777215,                      "unit": "kilometers" },                             "name": "Odometer (TCM #2)",   "suggestedMetric": "odometer"}
   ]},
@@ -5059,8 +5076,8 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "103D"}, "freq": 30,
   "signals": [
-    {"id": "SKODA_ODO_3_V2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer"},
-    {"id": "SKODA_ODO_7E1",  "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "SKODA_ODO_3",   "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer"},
+    {"id": "SKODA_ODO_7E1", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1057"}, "freq": 3600,
   "signals": [
@@ -5576,7 +5593,8 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1196"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HYBRID_T", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "celsius" }, "name": "Hybrid temperature"}
+    {"id": "SKODA_HYBRID_T",     "path": "Engine", "fmt": { "len": 16, "max": 65535,      "unit": "celsius" }, "name": "Hybrid temperature"},
+    {"id": "SKODA_TCM_1196_RAW", "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "scalar"  }, "name": "Transmission read 1196, raw count"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "11A7"}, "freq": 3600,
   "signals": [
@@ -5669,7 +5687,7 @@
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2002"}, "freq": 0.25,
   "signals": [
     {"id": "SKODA_ENG_TQ_7E1_7E1", "path": "Engine", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "newtonMeters" }, "name": "Engine torque"},
-    {"id": "SKODA_ENG_TQ_7E1",     "path": "Engine", "fmt": { "len": 16, "max": 65535,                              "unit": "newtonMeters" }, "name": "Engine torque"}
+    {"id": "SKODA_ENG_TQ_7E1_V2",  "path": "Engine", "fmt": { "len": 16, "max": 65535,                              "unit": "newtonMeters" }, "name": "Engine torque"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "203F"}, "freq": 0.25,
   "signals": [
@@ -6136,7 +6154,7 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "7064"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_ENG_TQ_7E1_V2", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "newtonMeters" }, "name": "Engine torque"}
+    {"id": "SKODA_ENG_TQ_7E1", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "newtonMeters" }, "name": "Engine torque"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "7078"}, "freq": 0.25,
   "signals": [

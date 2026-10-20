@@ -371,7 +371,8 @@
   "signals": [
     {"id": "SKODA_HVBAT_CAP",       "path": "Battery", "fmt": { "len": 32, "max": 3276,               "div": 1310770, "unit": "kilowattHours" }, "name": "HV battery capacity",                  "description": "Total possible energy in the high voltage battery"},
     {"id": "SKODA_HVBAT_E_MAX",     "path": "Battery", "fmt": { "len": 16, "max": 3276750, "mul": 50,                 "unit": "watts"         }, "name": "HV battery, max energy"},
-    {"id": "SKODA_HVBAT_E_MAX_RAW", "path": "Battery", "fmt": { "len": 16, "max": 65535,                              "unit": "scalar"        }, "name": "HV battery maximum energy, raw count"}
+    {"id": "SKODA_HVBAT_E_MAX_RAW", "path": "Battery", "fmt": { "len": 16, "max": 65535,                              "unit": "scalar"        }, "name": "HV battery maximum energy, raw count"},
+    {"id": "SKODA_HVBAT_CAP_24KWH", "path": "Battery", "fmt": { "len": 16, "max": 3276.75, "mul": 50, "div": 1000,    "unit": "kilowattHours" }, "name": "HV battery capacity",                  "description": "Total possible energy in the high voltage battery"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB4"}, "freq": 1,
   "signals": [

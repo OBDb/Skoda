@@ -652,7 +652,8 @@
   ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "2613"}, "freq": 30,
   "signals": [
-    {"id": "SKODA_IAT", "path": "Climate", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "celsius" }, "name": "Interior air temperature"}
+    {"id": "SKODA_IAT",     "path": "Climate", "fmt": { "len": 16, "max": 255,  "div": 10, "unit": "celsius" }, "name": "Interior air temperature"},
+    {"id": "SKODA_CABIN_T", "path": "Engine",  "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
 { "hdr": "715", "rax": "77F", "fcm1": true, "dbg": true, "cmd": {"22": "2353"}, "freq": 3600,
   "signals": [
@@ -926,8 +927,8 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2605"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_CLIMATE_REFRIG_P", "path": "Engine",  "fmt": { "len": 8, "max": 51,             "div": 5, "unit": "bars" }, "name": "Refrigerant pressure"},
-    {"id": "SKODA_REFRIG_P",         "path": "Climate", "fmt": { "len": 8, "max": 51, "mul": 0.2,           "unit": "bars" }, "name": "Refrigerant pressure"}
+    {"id": "SKODA_CLIMATE_REFRIG_P", "path": "Engine",  "fmt": { "len": 8, "max": 51, "div": 5,                "unit": "bars" }, "name": "Refrigerant pressure"},
+    {"id": "SKODA_REFRIG_P",         "path": "Climate", "fmt": { "len": 8, "max": 51, "div": 5, "nullmax": 51, "unit": "bars" }, "name": "Refrigerant pressure"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2606"}, "freq": 2,
   "signals": [
@@ -980,7 +981,7 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2613"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_CABIN_T",    "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,  "sign": true, "unit": "celsius" }, "name": "Cabin temperature"},
+    {"id": "SKODA_CABIN_T_V2", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,  "sign": true, "unit": "celsius" }, "name": "Cabin temperature"},
     {"id": "SKODA_C7_CABIN_T", "path": "Engine", "fmt": { "len": 16, "max": 127.99, "min": -128,    "div": 256, "sign": true, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261E"}, "freq": 5,
@@ -988,7 +989,7 @@
     {"id": "SKODA_RECIRC_ACT_STEPS",      "path": "Climate", "fmt": {           "len": 16, "max": 65535,                                         "unit": "scalar"  }, "name": "Recirculation flap, actual steps"},
     {"id": "SKODA_RECIRC_FLAP_ACT_STEPS", "path": "Climate", "fmt": {           "len": 16, "max": 65535,                       "nullmax": 65535, "unit": "scalar"  }, "name": "Recirculation flap, actual steps"},
     {"id": "SKODA_RECIRC_ACT_PCT",        "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,               "div": 2,                   "unit": "percent" }, "name": "Recirculation flap, actual"},
-    {"id": "SKODA_RECIRC_FLAP_ACT_PCT",   "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,   "mul": 0.5,                             "unit": "percent" }, "name": "Recirculation flap, actual"}
+    {"id": "SKODA_RECIRC_FLAP_ACT_PCT",   "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 127.5, "mul": 0.5,           "nullmax": 127.5, "unit": "percent" }, "name": "Recirculation flap, actual"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261F"}, "freq": 5,
   "signals": [
@@ -1004,13 +1005,15 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2622"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_FL_T_FLAP_ACT",                "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front left temperature flap actual"},
-    {"id": "SKODA_CLIMATE_FR_L_T_FLP_ACT_VALUE", "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front left temperature flap actual value"}
+    {"id": "SKODA_FL_T_FLAP_ACT",                "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,               "div": 2,                   "unit": "percent" }, "name": "Front left temperature flap actual"},
+    {"id": "SKODA_CLIMATE_FR_L_T_FLP_ACT_VALUE", "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100,   "mul": 0.5,                             "unit": "percent" }, "name": "Front left temperature flap actual value"},
+    {"id": "SKODA_FRONT_LEFT_T_FLAP_ACT",        "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 127.5, "mul": 0.5,           "nullmax": 127.5, "unit": "percent" }, "name": "Front left temperature flap actual"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2626"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_FR_T_FLAP_ACT",                "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,             "div": 2, "unit": "percent" }, "name": "Front right temperature flap actual"},
-    {"id": "SKODA_CLIMATE_FR_R_T_FLP_ACT_VALUE", "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 0.5,           "unit": "percent" }, "name": "Front right temperature flap actual value"}
+    {"id": "SKODA_FR_T_FLAP_ACT",                "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 100,               "div": 2,                   "unit": "percent" }, "name": "Front right temperature flap actual"},
+    {"id": "SKODA_CLIMATE_FR_R_T_FLP_ACT_VALUE", "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 100,   "mul": 0.5,                             "unit": "percent" }, "name": "Front right temperature flap actual value"},
+    {"id": "SKODA_FRONT_RIGHT_T_FLAP_ACT",       "path": "Engine",  "fmt": {"bix": 16, "len": 8, "max": 127.5, "mul": 0.5,           "nullmax": 127.5, "unit": "percent" }, "name": "Front right temperature flap actual"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "263D"}, "freq": 5,
   "signals": [
@@ -1038,7 +1041,7 @@
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "42DB"}, "freq": 5,
   "signals": [
     {"id": "SKODA_CABIN_CO2",            "path": "Climate", "fmt": {"bix": 8, "len": 8, "max": 25500, "mul": 100,                   "unit": "scalar" }, "name": "CO2 content interior"},
-    {"id": "SKODA_CO2_CONTENT_INTERIOR", "path": "Climate", "fmt": {"bix": 8, "len": 8, "max": 25500, "mul": 100, "nullmax": 25500, "unit": "scalar" }, "name": "CO2 content interior"}
+    {"id": "SKODA_CO2_CONTENT_INTERIOR", "path": "Climate", "fmt": {"bix": 8, "len": 8, "max": 25400, "mul": 100, "nullmax": 25400, "unit": "scalar" }, "name": "CO2 content interior"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "482B"}, "freq": 2,
   "signals": [
@@ -1858,8 +1861,8 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "112D"}, "freq": 1,
   "signals": [
     {"id": "SKODA_SPARK_EFF_DEV_PART",      "path": "Engine", "fmt": { "len": 8,  "max": 100,                    "mul": 78.1,  "div": 100,                     "unit": "percent" }, "name": "Spark efficiency deviation at part load"},
-    {"id": "SKODA_SPARK_EFFICIENCY_DEV_V2", "path": "Engine", "fmt": { "len": 8,  "max": 199,                    "mul": 781,   "div": 1000,                    "unit": "percent" }, "name": "Spark efficiency deviation at part load"},
     {"id": "SKODA_SEG_AD_MMV_ER_1",         "path": "Engine", "fmt": { "len": 16, "max": 7.8123, "min": -7.8125, "mul": 78123, "div": 327670000, "sign": true, "unit": "percent" }, "name": "SEG_AD_MMV_ER, 1"},
+    {"id": "SKODA_SPARK_EFFICIENCY_DEV_V2", "path": "Engine", "fmt": { "len": 8,  "max": 199,                    "mul": 781,   "div": 1000,                    "unit": "percent" }, "name": "Spark efficiency deviation at part load"},
     {"id": "SKODA_SPARK_EFF_DEV",           "path": "Engine", "fmt": { "len": 8,  "max": 199.14,                 "mul": 78.1,  "div": 100,                     "unit": "percent" }, "name": "Spark efficiency deviation at part load"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "112E"}, "freq": 1,
@@ -6775,63 +6778,78 @@
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EAE"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_1", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 1"}
+    {"id": "SKODA_HVBAT_T_1", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 1"},
+    {"id": "SKODA_T_SENS_1",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 1"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EAF"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_2", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 2"}
+    {"id": "SKODA_HVBAT_T_2", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 2"},
+    {"id": "SKODA_T_SENS_2",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 2"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB0"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_3", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 3"}
+    {"id": "SKODA_HVBAT_T_3", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 3"},
+    {"id": "SKODA_T_SENS_3",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 3"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB1"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_4", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 4"}
+    {"id": "SKODA_HVBAT_T_4", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 4"},
+    {"id": "SKODA_T_SENS_4",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 4"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB2"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_5", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 5"}
+    {"id": "SKODA_HVBAT_T_5", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 5"},
+    {"id": "SKODA_T_SENS_5",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 5"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB3"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_6", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 6"}
+    {"id": "SKODA_HVBAT_T_6", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 6"},
+    {"id": "SKODA_T_SENS_6",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 6"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB4"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_7", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 7"}
+    {"id": "SKODA_HVBAT_T_7", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 7"},
+    {"id": "SKODA_T_SENS_7",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 7"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB5"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_8", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 8"}
+    {"id": "SKODA_HVBAT_T_8", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 8"},
+    {"id": "SKODA_T_SENS_8",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 8"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB6"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_9", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 9"}
+    {"id": "SKODA_HVBAT_T_9", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 9"},
+    {"id": "SKODA_T_SENS_9",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 9"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB7"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_10", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 10"}
+    {"id": "SKODA_HVBAT_T_10", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 10"},
+    {"id": "SKODA_T_SENS_10",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 10"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB8"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_11", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 11"}
+    {"id": "SKODA_HVBAT_T_11", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 11"},
+    {"id": "SKODA_T_SENS_11",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 11"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB9"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_12", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 12"}
+    {"id": "SKODA_HVBAT_T_12", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 12"},
+    {"id": "SKODA_T_SENS_12",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 12"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EBA"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_13", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 13"}
+    {"id": "SKODA_HVBAT_T_13", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 13"},
+    {"id": "SKODA_T_SENS_13",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 13"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EBC"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_15", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 15"}
+    {"id": "SKODA_HVBAT_T_15", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 15"},
+    {"id": "SKODA_T_SENS_15",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 15"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1EBD"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_16", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 16"}
+    {"id": "SKODA_HVBAT_T_16", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 16"},
+    {"id": "SKODA_T_SENS_16",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 16"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "2A0B"}, "freq": 5,
   "signals": [
@@ -6843,7 +6861,8 @@
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "7425"}, "freq": 5,
   "signals": [
-    {"id": "SKODA_HVBAT_T_17", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 17"}
+    {"id": "SKODA_HVBAT_T_17", "path": "Battery", "fmt": { "len": 16, "max": 1023.984,              "div": 64,               "unit": "celsius" }, "name": "HV battery temperature sensor 17"},
+    {"id": "SKODA_T_SENS_17",  "path": "Engine",  "fmt": { "len": 16, "max": 511,      "min": -512, "div": 64, "sign": true, "unit": "celsius" }, "name": "Temperature sensor 17"}
   ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "74B9"}, "freq": 1,
   "signals": [
@@ -7688,8 +7707,9 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E3D"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_HVBAT_I",       "path": "Battery", "fmt": { "len": 16, "max": 200, "min": -200, "div": 4, "add": -511, "unit": "amps" }, "name": "HV battery current", "suggestedMetric": "tractionBatteryCurrent"},
-    {"id": "SKODA_HVBAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 200, "min": -200, "div": 4, "add": -511, "unit": "amps" }, "name": "HV battery current"}
+    {"id": "SKODA_HVBAT_I",       "path": "Battery", "fmt": { "len": 16, "max": 200,      "min": -200, "div": 4, "add": -511, "unit": "amps"   }, "name": "HV battery current",      "suggestedMetric": "tractionBatteryCurrent"},
+    {"id": "SKODA_HVBAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 200,      "min": -200, "div": 4, "add": -511, "unit": "amps"   }, "name": "HV battery current"},
+    {"id": "SKODA_HVBAT_I_RAW",   "path": "Battery", "fmt": { "len": 24, "max": 16777215,                                     "unit": "scalar" }, "name": "HV battery current, raw"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EBB"}, "freq": 5,
   "signals": [
@@ -7721,8 +7741,9 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "51E0"}, "freq": 30,
   "signals": [
-    {"id": "SKODA_HVBAT_SOH",        "path": "Battery", "fmt": { "len": 16, "max": 100,  "min": -1798.574, "mul": 0.127, "add": -1798.574, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"},
-    {"id": "SKODA_E_TRON_HVBAT_SOH", "path": "Battery", "fmt": { "len": 16, "max": 6524, "min": -1798.574, "mul": 0.127, "add": -1798.574, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"}
+    {"id": "SKODA_HVBAT_SOH",        "path": "Battery", "fmt": { "len": 16, "max": 100,  "min": -1798.574, "mul": 0.127,            "add": -1798.574,               "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"},
+    {"id": "SKODA_HVBAT_SOH_J12",    "path": "Battery", "fmt": { "len": 16, "max": 100,                                  "div": 10, "add": -1369.5,   "nullmin": 0, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"},
+    {"id": "SKODA_E_TRON_HVBAT_SOH", "path": "Battery", "fmt": { "len": 16, "max": 6524, "min": -1798.574, "mul": 0.127,            "add": -1798.574,               "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "7448"}, "freq": 1,
   "signals": [
@@ -8225,8 +8246,8 @@
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "028C"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_SOC",      "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100,  "div": 250,              "unit": "percent" }, "name": "State of charge",          "suggestedMetric": "stateOfCharge"},
-    {"id": "SKODA_SOC_DISP", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 20.4, "div": 46,  "add": -6.4, "unit": "percent" }, "name": "State of charge, display", "suggestedMetric": "stateOfCharge"}
+    {"id": "SKODA_SOC",      "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100,  "div": 250,              "unit": "percent" }, "name": "State of charge",           "suggestedMetric": "stateOfCharge"},
+    {"id": "SKODA_SOC_DISP", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 20.4, "div": 46,  "add": -6.4, "unit": "percent" }, "name": "Displayed state of charge"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "fcm1": true, "dbg": true, "cmd": {"22": "02BD"}, "freq": 1,
   "signals": [
@@ -8997,7 +9018,8 @@
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7B", "dbg": true, "cmd": {"22": "F40D"}, "freq": 0.25,
   "signals": [
-    {"id": "SKODA_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "SKODA_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255,                 "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"},
+    {"id": "SKODA_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
   ]},
 { "hdr": "FC00", "rax": "FE00B9", "pri": "17", "tst": "B9", "dbg": true, "cmd": {"22": "465B"}, "freq": 1,
   "signals": [
